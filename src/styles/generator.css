@@ -5,7 +5,7 @@
   --g-amber: #d4820a;
   --g-amber-light: #f0a832;
   --g-slate: #2a2f38;
-  --g-muted: #7a7670;
+  --g-muted: #625f5a;
   --g-rule: #e0dcd2;
   --g-dark-panel: #111110;
 }
@@ -195,7 +195,7 @@ img {
 
 .g-form-note {
   font-size: 13px;
-  color: #5a5852;
+  color: #908c86;
   margin-bottom: 36px;
   line-height: 1.5;
 }
@@ -221,7 +221,7 @@ img {
 }
 
 .g-input::placeholder {
-  color: #4a4843;
+  color: #706d67;
 }
 
 .g-input:focus {
@@ -252,7 +252,7 @@ img {
 
 .g-form-fine {
   font-size: 11px;
-  color: #3a3a35;
+  color: #908c86;
   margin-top: 12px;
   line-height: 1.6;
   letter-spacing: 0.3px;

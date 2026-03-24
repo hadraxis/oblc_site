@@ -221,7 +221,7 @@ select {
 }
 
 .section-copy {
-  color: rgba(243, 236, 220, 0.74);
+  color: rgba(243, 236, 220, 0.82);
   font-size: clamp(0.98rem, 1vw, 1.04rem);
   line-height: 1.75;
   max-width: 60ch;
