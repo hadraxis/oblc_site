@@ -223,6 +223,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           const val = this.inputEl.value.trim();
           const s = this.steps[this.step];
           if (!val && s.id !== 'notes') return;
+          if (s.id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+            this.inputEl.placeholder = 'Please enter a valid email address';
+            this.inputEl.value = '';
+            return;
+          }
           this.addUserMsg(val || '(skipped)');
           this.data[s.id] = val;
           if (this.inputRow) this.inputRow.style.display = 'none';
