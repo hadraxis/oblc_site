@@ -15,7 +15,7 @@ const { page } = Astro.props;
 <GeneratorLayout title={page.metaTitle} description={page.metaDescription} city={page.city}>
 
   <!-- NAV -->
-  <nav class="g-nav">
+  <nav class="g-nav" aria-label="Site navigation">
     <span class="g-nav-logo">EOS Backup Energy</span>
     <a href="#estimate" class="g-nav-cta">Get a free estimate</a>
   </nav>
@@ -57,14 +57,14 @@ const { page } = Astro.props;
 
         <!-- Text input -->
         <div id="chat-input-row" style="display:none;">
-          <input id="chat-input" class="g-input" type="text" autocomplete="off" />
-          <button id="chat-send" class="g-submit" type="button" style="width:auto;padding:14px 22px;border-radius:2px;flex-shrink:0;">
+          <input id="chat-input" class="g-input" type="text" autocomplete="off" aria-label="Your answer" />
+          <button id="chat-send" class="g-submit" type="button" style="width:auto;padding:14px 22px;border-radius:2px;flex-shrink:0;" aria-label="Send answer">
             &#8594;
           </button>
         </div>
 
         <!-- Multiple choice options -->
-        <div id="chat-opts" style="display:none;flex-direction:column;gap:8px;"></div>
+        <div id="chat-opts" role="group" aria-label="Response options" style="display:none;flex-direction:column;gap:8px;"></div>
 
         <!-- Honeypot — hidden from real users, visible to bots -->
         <input
@@ -196,7 +196,7 @@ const { page } = Astro.props;
     <p class="g-footer-copy">
       © {new Date().getFullYear()} Olivebank LC | Serving the Houston metro area.
     </p>
-    <nav class="g-footer-links">
+    <nav class="g-footer-links" aria-label="Footer navigation">
       <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
       <a href="/generator/permits" class="g-footer-link">Permits</a>
       <a href="/generator/about" class="g-footer-link">About</a>
