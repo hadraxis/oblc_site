@@ -1,0 +1,286 @@
+---
+import "../styles/generator.css";
+import { site } from "../content/site";
+
+interface Props {
+  title: string;
+  description: string;
+  city: string;
+}
+
+const { title, description, city } = Astro.props;
+const gtmContainerId = site.analytics.gtmContainerId;
+const canonicalUrl = `${site.url}${Astro.url.pathname}`;
+const ogImage = `${site.url}/images/home-reserve-hero.jpg`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Eos Backup Energy and Battery",
+  "description": "Home backup power systems for Houston area homeowners. We install Home Reserve whole-home battery backup systems.",
+  "url": "https://olivebanklc.com/generator/houston",
+  "email": "xavi@olivebanklc.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Spring",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Houston" },
+    { "@type": "City", "name": "Katy" },
+    { "@type": "City", "name": "Sugar Land" },
+    { "@type": "City", "name": "Pearland" },
+    { "@type": "City", "name": "The Woodlands" }
+  ],
+  "knowsAbout": ["home backup power", "Home Reserve", "standby generator alternatives", "whole-home battery backup"],
+  "founder": {
+    "@type": "Person",
+    "name": "Charles Atkins",
+    "jobTitle": "Sales and Business Development",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Spring",
+      "addressRegion": "TX"
+    }
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#faf8f3" />
+    <title>{title}</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="EOS Backup Energy and Battery" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="525" />
+    <meta property="og:image:alt" content="Home Reserve whole-home backup power system" />
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- GTM -->
+    <script is:inline>
+      {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmContainerId}');`}
+    </script>
+
+    <!-- LocalBusiness schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Serif:ital@1&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-city={city}>
+    <!-- GTM noscript -->
+    <noscript>
+      <iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${gtmContainerId}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
+    <slot />
+
+    <script>
+      class ChatForm {
+        data: Record<string, string> = {};
+        step = 0;
+        cityName: string;
+        thread: HTMLElement | null;
+        inputRow: HTMLElement | null;
+        inputEl: HTMLInputElement | null;
+        sendBtn: HTMLButtonElement | null;
+        optsEl: HTMLElement | null;
+        wrap: HTMLElement | null;
+        successEl: HTMLElement | null;
+        steps: any[];
+
+        constructor() {
+          this.cityName = (document.body as HTMLElement).dataset.city || 'your area';
+          this.thread   = document.getElementById('chat-thread');
+          this.inputRow = document.getElementById('chat-input-row');
+          this.inputEl  = document.getElementById('chat-input') as HTMLInputElement | null;
+          this.sendBtn  = document.getElementById('chat-send') as HTMLButtonElement | null;
+          this.optsEl   = document.getElementById('chat-opts');
+          this.wrap     = document.getElementById('chat-wrap');
+          this.successEl = document.getElementById('chat-success');
+
+          if (!this.thread) return;
+
+          this.steps = [
+            { id: 'name',    msg: "Hi. What is your name?",                                  type: 'text',    placeholder: 'Your full name',         inputType: 'text' },
+            { id: 'address', msg: () => `Thanks ${this.data.name}. What is your home address?`, type: 'text', placeholder: 'Street address and city', inputType: 'text' },
+            { id: 'phone',   msg: "Best number to reach you?",                               type: 'text',    placeholder: 'Phone number',           inputType: 'tel'  },
+            { id: 'concern', msg: "What is your main concern right now?", type: 'options', opts: [
+              'Outages happen too often',
+              'Medical equipment needs reliable power',
+              'Tired of generator fuel costs',
+              'Planning ahead for storm season',
+            ]},
+            { id: 'quotes', msg: "Have you gotten other quotes?", type: 'options', opts: [
+              'Yes, got a generator quote',
+              'Just started researching',
+              'No, first call',
+            ]},
+            { id: 'notes', msg: "Anything else we should know? Press send to skip.", type: 'text', placeholder: 'Optional', inputType: 'text' },
+          ];
+
+          this.sendBtn?.addEventListener('click', () => this.handleTextInput());
+          this.inputEl?.addEventListener('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') this.handleTextInput(); });
+
+          setTimeout(() => this.showStep(), 500);
+        }
+
+        addBotMsg(text: string) {
+          const el = document.createElement('div');
+          el.className = 'chat-bot-msg';
+          el.textContent = text;
+          this.thread!.appendChild(el);
+          this.thread!.scrollTop = this.thread!.scrollHeight;
+        }
+
+        addUserMsg(text: string) {
+          const el = document.createElement('div');
+          el.className = 'chat-user-msg';
+          el.textContent = text;
+          this.thread!.appendChild(el);
+          this.thread!.scrollTop = this.thread!.scrollHeight;
+        }
+
+        showStep() {
+          if (this.step >= this.steps.length) { this.submit(); return; }
+          const s = this.steps[this.step];
+          const msg = typeof s.msg === 'function' ? s.msg() : s.msg;
+          this.addBotMsg(msg);
+          if (this.optsEl) this.optsEl.style.display = 'none';
+          if (this.inputRow) this.inputRow.style.display = 'none';
+          setTimeout(() => {
+            if (s.type === 'options') this.showOptions(s.opts);
+            else this.showTextInput(s.placeholder, s.inputType);
+          }, 300);
+        }
+
+        showTextInput(placeholder: string, inputType = 'text') {
+          if (!this.inputEl || !this.inputRow) return;
+          this.inputEl.placeholder = placeholder;
+          this.inputEl.type = inputType;
+          this.inputEl.value = '';
+          this.inputRow.style.display = 'flex';
+          this.inputEl.focus();
+        }
+
+        showOptions(opts: string[]) {
+          if (!this.optsEl) return;
+          this.optsEl.innerHTML = '';
+          this.optsEl.style.display = 'flex';
+          opts.forEach((opt) => {
+            const btn = document.createElement('button');
+            btn.className = 'chat-opt-btn';
+            btn.textContent = opt;
+            btn.type = 'button';
+            btn.addEventListener('click', () => {
+              this.addUserMsg(opt);
+              this.data[this.steps[this.step].id] = opt;
+              if (this.optsEl) this.optsEl.style.display = 'none';
+              this.step++;
+              setTimeout(() => this.showStep(), 500);
+            });
+            this.optsEl!.appendChild(btn);
+          });
+        }
+
+        handleTextInput() {
+          if (!this.inputEl) return;
+          const val = this.inputEl.value.trim();
+          const s = this.steps[this.step];
+          if (!val && s.id !== 'notes') return;
+          this.addUserMsg(val || '(skipped)');
+          this.data[s.id] = val;
+          if (this.inputRow) this.inputRow.style.display = 'none';
+          this.step++;
+          setTimeout(() => this.showStep(), 500);
+        }
+
+        async submit() {
+          this.addBotMsg("Sending your request now...");
+
+          // Honeypot check
+          const honey = document.querySelector('input[name="_honey"]') as HTMLInputElement | null;
+          if (honey?.value) return;
+
+          // GTM event
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({
+            event: 'generator_lead_submit',
+            lead_city: this.cityName,
+            lead_name: this.data.name,
+            lead_phone: this.data.phone,
+            lead_concern: this.data.concern,
+            lead_quote_status: this.data.quotes,
+          });
+
+          try {
+            // TODO: replace YOUR_FORM_ID with your Formspree endpoint
+            // Sign up free at formspree.io, create a form, paste the ID here
+            // e.g. https://formspree.io/f/abcdefgh
+            await fetch('https://formspree.io/f/meeryzka', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+              body: JSON.stringify({
+                ...this.data,
+                city: this.cityName,
+                _subject: `New lead - ${this.cityName} - ${this.data.name || 'unnamed'}`,
+                _replyto: this.data.phone,
+              }),
+            });
+          } catch (_) {
+            // GTM event already fired — fail silently
+          }
+
+          setTimeout(() => {
+            if (this.wrap) this.wrap.style.display = 'none';
+            if (this.successEl) this.successEl.style.display = 'block';
+          }, 800);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => new ChatForm());
+
+      // Smooth scroll for nav CTA
+      document.querySelectorAll('a[href="#estimate"]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById('estimate')?.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
+  </body>
+</html>

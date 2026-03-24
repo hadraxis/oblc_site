@@ -1,0 +1,178 @@
+---
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import SiteHeader from "../components/layout/SiteHeader.astro";
+import ShellFrame from "../components/layout/ShellFrame.astro";
+import SectionIntro from "../components/sections/SectionIntro.astro";
+import { profile } from "../content/profile";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About | Olivebank LC">
+  <main>
+    <SiteHeader />
+
+    <SectionIntro
+      eyebrow="About Charles"
+      title="A business profile grounded in customer-facing work."
+      summary={`${profile.business} is the business shell Charles operates through. ${profile.experience.intro}`}
+    >
+      <article class="soft-card animate-fade-rise rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+          How Charles works
+        </p>
+        <div class="mt-4 space-y-3">
+          {
+            profile.principles.items.map((item) => (
+              <div class="rounded-[18px] border border-white/8 bg-black/14 px-4 py-4">
+                <p class="text-sm font-semibold text-parchment">{item.title}</p>
+                <p class="mt-2 text-sm leading-6 text-parchment/68">{item.body}</p>
+              </div>
+            ))
+          }
+        </div>
+      </article>
+    </SectionIntro>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">Background</span>
+          <h2 class="page-heading text-parchment">
+            Experience across sales, support, and operations.
+          </h2>
+          <p class="section-copy">
+            Reservations, insurance, leasing, and support-heavy work all sharpen different parts of
+            the same skill set: commercial awareness, careful communication, and the ability to keep
+            the next step visible when there are a lot of moving parts.
+          </p>
+          <p class="section-copy">
+            That is part of why Olivebank does not read like a pure automation business. The systems
+            side only matters if it supports the human side of the work.
+          </p>
+          <p class="section-copy">{profile.profileLens.intro}</p>
+          {
+            profile.profileLens.paragraphs.map((paragraph) => (
+              <p class="section-copy">{paragraph}</p>
+            ))
+          }
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          {
+            profile.experience.points.map((item, index) => (
+              <article
+                class:list={[
+                  "soft-card rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6",
+                  index === 0 ? "animate-fade-rise-delay-1" : index === 1 ? "animate-fade-rise-delay-2" : "animate-fade-rise-delay-3"
+                ]}
+              >
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+                  {item.title}
+                </p>
+                <p class="mt-4 text-sm leading-7 text-parchment/74">{item.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">Tools And Credentials</span>
+          <h2 class="page-heading text-parchment">
+            Tools and credentials support the work, but they are not the whole story.
+          </h2>
+          <p class="section-copy">{profile.tools.intro}</p>
+          {
+            profile.tools.paragraphs.map((paragraph) => (
+              <p class="section-copy">{paragraph}</p>
+            ))
+          }
+        </div>
+
+        <div class="grid gap-4">
+          <article class="soft-card animate-fade-rise-delay-1 rounded-[22px] border border-white/10 bg-white/4 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Credentials</p>
+            <p class="mt-4 text-sm leading-7 text-parchment/74">{profile.credentials.intro}</p>
+          </article>
+
+          <div class="grid gap-3 sm:grid-cols-3">
+            {
+              profile.credentials.items.map((item, index) => (
+                <div
+                  class:list={[
+                    "soft-card rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/72",
+                    index === 0 ? "animate-fade-rise-delay-1" : index === 1 ? "animate-fade-rise-delay-2" : "animate-fade-rise-delay-3"
+                  ]}
+                >
+                  {item}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">Olivebank LC</span>
+          <h2 class="page-heading text-parchment">
+            The LLC provides one business home for current work and future offers.
+          </h2>
+          <p class="section-copy">
+            Olivebank LC holds direct work, current services, and the offers that may eventually
+            earn their own dedicated pages or subdomains.
+          </p>
+          <p class="section-copy">
+            The site is meant to feel stable, clear, and useful as the business expands.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            profile.workflow.steps.map((step, index) => (
+              <article
+                class:list={[
+                  "soft-card rounded-[22px] border border-white/10 bg-white/4 p-5",
+                  index < 2 ? "animate-fade-rise-delay-1" : "animate-fade-rise-delay-2"
+                ]}
+              >
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+                  {step.title}
+                </p>
+                <p class="mt-4 text-sm leading-7 text-parchment/74">{step.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section" class="pb-10">
+      <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+        <div class="space-y-5">
+          <span class="eyebrow">Contact</span>
+          <h2 class="page-heading text-parchment">
+            If there is a reason to reach out, the first note does not need to be elaborate.
+          </h2>
+          <p class="section-copy">{profile.contact.intro}</p>
+        </div>
+
+        <a
+          class="soft-card rounded-[22px] border border-white/10 bg-white/4 p-5 text-sm leading-7 text-parchment/74 transition hover:border-brass/35"
+          href={`mailto:${profile.contactInfo.email}`}
+        >
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Email</p>
+          <p class="mt-3 text-lg text-parchment">{profile.contactInfo.email}</p>
+          <p class="mt-3">{profile.contact.note}</p>
+        </a>
+      </div>
+    </ShellFrame>
+
+    <SiteFooter />
+  </main>
+</BaseLayout>

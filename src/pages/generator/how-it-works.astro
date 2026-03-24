@@ -1,0 +1,258 @@
+---
+import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
+---
+
+<GeneratorLayout
+  title="How It Works | EOS Backup Energy and Battery | Houston Metro"
+  description="From your first form submission to installation day. Here is exactly what the process looks like with EOS Backup Energy and Battery."
+  city="Houston Metro"
+>
+
+  <nav class="g-nav">
+    <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
+    <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
+  </nav>
+
+  <div style="padding: 140px 48px 80px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--g-rule);">
+    <p class="g-eyebrow">EOS Backup Energy and Battery</p>
+    <h1 class="g-hero-title" style="font-size: clamp(52px, 6vw, 88px); margin-bottom: 24px;">
+      How It Works.
+    </h1>
+    <p style="font-size: 18px; line-height: 1.8; color: var(--g-slate); max-width: 600px;">
+      Most homeowners start shopping for backup power the same way. They look up Generac, get a quote, and
+      start thinking about gas lines, propane tanks, and HOA approval. Here is what the process looks like
+      with EOS Backup Energy and Battery, and why a lot of those concerns disappear.
+    </p>
+  </div>
+
+  <!-- STEPS -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 80px 48px;">
+    {[
+      {
+        step: "01",
+        title: "You reach out",
+        body: "Fill out the form with your name, phone number, address, and a photo of your electrical panel. That is genuinely all we need to start. No lengthy intake form, no sales quiz. We will follow up by email or phone within one business day."
+      },
+      {
+        step: "02",
+        title: "Short call, 10 to 15 minutes",
+        body: "We ask a few questions about your home: square footage, what you want to keep running during an outage, whether you have an electric vehicle, and any HOA restrictions we should know about. This call is how we figure out whether Home Reserve is the right fit for your home, not what is most profitable to sell you. Most people contact us after getting a Generac or Kohler quote. That is fine. We will walk through the comparison honestly if you want to."
+      },
+      {
+        step: "03",
+        title: "What we install",
+        body: "EOS Backup Energy and Battery installs the Home Reserve, a whole-home backup system that mounts to your wall, connects to your existing electrical service, and runs your house when the grid goes down. No gas line. No concrete pad. No exhaust. No noise. No fuel delivery. No annual tune-up. When the grid goes down it switches on instantly. When power comes back it recharges automatically from the grid. No tank to fill, no truck to schedule. For most Houston homes the Home Reserve covers 50 or more hours at storm-normal draw, fridge, fans, Wi-Fi, phones, and lights, without a single watt from the grid. In winter your gas heat keeps running. The Home Reserve powers the air handler fan."
+      },
+      {
+        step: "04",
+        title: "What it costs",
+        body: "Home Reserve equipment is $14,610 before shipping and tax. Installation and permit fees are quoted separately based on your home. That is what the panel photo and utility bill are for. One purchase. No fuel bills. No maintenance contracts. No repair calls. 10-year warranty. Financing is available. Ask us about current terms when you reach out."
+      },
+      {
+        step: "05",
+        title: "You confirm fit, we get started",
+        body: "Send us a photo of your electrical panel and your utility bill. We confirm the Home Reserve is the right fit for your home. If it is, we move straight to scheduling. No back and forth, no surprises."
+      },
+      {
+        step: "06",
+        title: "We handle the permits",
+        body: "Not every municipality requires a permit for this type of installation, which makes the process faster in those areas. Where permits are required, a fire permit may also apply depending on the battery chemistry and installation location. Permit costs are billed separately because every jurisdiction sets its own fees. What we can control is the process. We handle all of it. You do not file anything, call anyone, or show up anywhere. Timeline is typically two to three weeks where permits are required, and can run four to six weeks if a plan revision or re-inspection comes up. We will give you a realistic estimate for your specific municipality before anything starts."
+      },
+      {
+        step: "07",
+        title: "Installation day",
+        body: "Most residential installations complete in four to eight hours. Home Reserve mounts to your wall, wires to a smart panel, and connects to your electrical system. You will be without power for a short window during the panel connection. We will give you the exact timing in advance. No concrete pad. No gas line. No outdoor unit. Two people, one day."
+      },
+      {
+        step: "08",
+        title: "Walkthrough and handoff",
+        body: "Before we leave we walk you through how the system works: how to read the app, how your critical circuits are configured, what happens automatically when the grid goes down, and who to call if something ever seems off. You get all documentation for warranty registration."
+      }
+    ].map((item) => (
+      <div style="display: grid; grid-template-columns: 72px 1fr; gap: 32px; padding: 48px 0; border-bottom: 1px solid var(--g-rule);">
+        <div>
+          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1; color: var(--g-rule); letter-spacing: 1px;">
+            {item.step}
+          </span>
+        </div>
+        <div>
+          <p style="font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-amber); margin-bottom: 12px;">
+            Step {item.step}
+          </p>
+          <p style="font-family: 'Bebas Neue', sans-serif; font-size: 30px; line-height: 1; letter-spacing: 1px; color: var(--g-black); margin-bottom: 16px;">
+            {item.title}
+          </p>
+          <p style="font-size: 16px; line-height: 1.85; color: var(--g-slate); max-width: 620px;">
+            {item.body}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <!-- COST COMPARISON TABLE -->
+  <div style="background: var(--g-off-white); padding: 80px 48px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div class="g-section-rule"></div>
+      <p class="g-section-label">10-year cost comparison</p>
+      <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: 1px; color: var(--g-black); margin: 24px 0 40px;">
+        The generator is cheaper on day one.
+      </p>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--g-black);">
+              <th style="text-align: left; padding: 12px 16px 12px 0; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Item</th>
+              <th style="text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Whole-Home Generator</th>
+              <th style="text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-amber);">Home Reserve</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Installed cost", "$8,500 to $13,000", "$14,610 + install"],
+              ["Annual maintenance", "$150 to $300 per year", "None"],
+              ["Fuel cost (whole home, NG)", "~$20 per day running", "None"],
+              ["Repairs over 10 years", "$400 to $1,200 est.", "None"],
+              ["10-year maintenance total", "$1,500 to $3,000", "$0"],
+              ["Warranty", "5 years limited", "10 years"],
+              ["HOA approval risk", "Often required", "None"],
+              ["Winter gas line failure", "Yes, NG homes", "None"],
+              ["10-year total cost est.", "$12,000 to $19,000+", "$14,610 + install, fixed"],
+            ].map(([item, gen, hr], i) => (
+              <tr style={`border-bottom: 1px solid var(--g-rule); background: ${i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.5)'}`}>
+                <td style="padding: 14px 16px 14px 0; color: var(--g-black); font-weight: 400;">{item}</td>
+                <td style="padding: 14px 16px; color: var(--g-slate);">{gen}</td>
+                <td style="padding: 14px 16px; color: var(--g-black); font-weight: 500;">{hr}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 14px; color: var(--g-muted); margin-top: 20px; line-height: 1.6;">
+        The generator is cheaper on day one. Running a whole home on natural gas costs roughly $20 per day, which
+        is manageable for a short outage but adds up. Over 10 years the gap closes or reverses depending on
+        how often it runs and what repairs come up. Home Reserve has one number and that number does not change.
+      </p>
+      <p style="font-size: 14px; color: var(--g-muted); margin-top: 12px; line-height: 1.6;">
+        One scenario where Home Reserve is not optional: anyone in the home who depends on powered medical
+        equipment. A generator requires a refill window that may not exist during extended outages. Home Reserve
+        does not. It recharges from the grid automatically when power returns and runs silently in between.
+      </p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div style="padding: 80px 48px; max-width: 1200px; margin: 0 auto;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Common questions</p>
+
+    <div style="display: grid; gap: 0; margin-top: 40px;">
+      {[
+        {
+          q: "How does Home Reserve compare to a Generac?",
+          a: "A Generac Guardian runs on natural gas or propane, installs outside on a concrete pad, and kicks on automatically when the grid fails. It is a proven product with a long track record. The tradeoffs are fuel cost, annual maintenance, noise during operation, and HOA restrictions in many Houston communities. EOS Backup Energy and Battery handles all of the permitting and installation coordination. One point of contact, permitting concierge included."
+        },
+        {
+          q: "I already got a Generac quote. Is it worth comparing?",
+          a: "Yes. Send it over. We will put both options side by side, total installed cost, ongoing fuel and maintenance over 10 years, what each covers during a real Houston outage. If the generator makes more sense for your situation we will tell you. If Home Reserve does, the math will show it."
+        },
+        {
+          q: "How do I get started without an in-person visit?",
+          a: "Send us a photo of your electrical panel and your utility bill. Email them or upload through the form. We confirm fit from that in most cases. If we need anything else we will ask."
+        },
+        {
+          q: "How long does the whole process take?",
+          a: "Typically four to eight weeks from confirmation. Permitting is the main variable. We will give you a realistic timeline for your specific municipality upfront."
+        },
+        {
+          q: "Do I need solar panels?",
+          a: "No. Home Reserve charges from the grid during normal operation and recharges automatically every time power returns. Solar is compatible if you have it. Not required."
+        },
+        {
+          q: "How big a system do I need?",
+          a: "For most Houston suburban homes Home Reserve at 27 kWh handles the real outage scenario comfortably, fridge, fans, Wi-Fi, phones, lights, for 50 or more hours at storm-normal draw. We confirm the right fit from your panel photo and utility bill."
+        },
+        {
+          q: "What happens during a power outage?",
+          a: "Instant switchover. Zero milliseconds of disruption when used with the smart panel. Your designated critical circuits stay on. Everything else goes dark the same as it always did."
+        },
+        {
+          q: "What about Harvey or Uri-level events?",
+          a: "Home Reserve covers 50 or more hours at storm-normal draw with zero recharging. In a winter event gas heat keeps running and Home Reserve powers the air handler fan. If a multi-week event unfolds a portable generator can be wired in as a supplement. In real Houston storm history the grid has always cycled back before that became necessary."
+        },
+        {
+          q: "Will my HOA have a problem with this?",
+          a: "Unlikely. Wall-mounted, no exhaust, no noise, no outdoor pad. There is nothing to object to in most cases. If your HOA has specific requirements we will work through them as part of the process."
+        },
+        {
+          q: "What does maintenance look like?",
+          a: "None. No oil changes, no tune-ups, no filter replacements. Firmware updates automatically. 10-year warranty."
+        }
+      ].map((item) => (
+        <div style="border-top: 1px solid var(--g-rule); padding: 32px 0;">
+          <p style="font-size: 15px; font-weight: 500; color: var(--g-black); margin-bottom: 12px; line-height: 1.4;">
+            {item.q}
+          </p>
+          <p style="font-size: 15px; line-height: 1.85; color: var(--g-slate);">
+            {item.a}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ONE MORE THING -->
+  <div style="background: var(--g-black); padding: 64px 48px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p style="font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-amber); margin-bottom: 20px;">
+        One more thing
+      </p>
+      <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.1; letter-spacing: 1px; color: var(--g-off-white); max-width: 720px; margin-bottom: 20px;">
+        Your Home Reserve may be eligible to earn money selling stored energy back to the grid.
+      </p>
+      <p style="font-size: 15px; line-height: 1.8; color: #6a6a62; max-width: 600px;">
+        Depending on where you live in the Houston area, this is not available everywhere and it is not the reason
+        most people buy. But if it applies to your address we will let you know when we confirm fit.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="padding: 88px 48px; max-width: 1200px; margin: 0 auto; text-align: center;">
+    <p class="g-eyebrow" style="justify-content: center;">Ready when you are</p>
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(40px, 5vw, 68px); line-height: 1; letter-spacing: 1px; margin: 20px auto 32px; max-width: 14ch; color: var(--g-black);">
+      Start with a free estimate.
+    </p>
+    <p style="font-size: 15px; color: var(--g-muted); margin-bottom: 40px;">
+      Pick your area and fill out the short form. We will handle the rest.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+      {[
+        { label: "Houston", href: "/generator/houston" },
+        { label: "Katy", href: "/generator/katy" },
+        { label: "Sugar Land", href: "/generator/sugar-land" },
+        { label: "Pearland", href: "/generator/pearland" },
+        { label: "The Woodlands", href: "/generator/the-woodlands" },
+      ].map((city) => (
+        <a
+          href={`${city.href}#estimate`}
+          style="display: inline-block; background: var(--g-black); color: var(--g-off-white); font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px; transition: background 0.2s;"
+        >
+          {city.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <footer class="g-footer">
+    <p class="g-footer-copy">
+      &copy; {new Date().getFullYear()} Olivebank LC | EOS Backup Energy and Battery | Spring, TX
+    </p>
+    <nav class="g-footer-links">
+      <a href="/generator/permits" class="g-footer-link">Permits</a>
+      <a href="/generator/about" class="g-footer-link">About</a>
+      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+    </nav>
+  </footer>
+
+</GeneratorLayout>

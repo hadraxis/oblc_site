@@ -1,0 +1,207 @@
+---
+import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
+import { generatorPages } from "../../content/generator-pages";
+
+export async function getStaticPaths() {
+  return generatorPages.map((page) => ({
+    params: { city: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+---
+
+<GeneratorLayout title={page.metaTitle} description={page.metaDescription} city={page.city}>
+
+  <!-- NAV -->
+  <nav class="g-nav">
+    <span class="g-nav-logo">EOS Backup Energy</span>
+    <a href="#estimate" class="g-nav-cta">Get a free estimate</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="g-hero">
+    <div class="g-hero-left">
+      <p class="g-eyebrow">{page.eyebrow}</p>
+
+      <h1 class="g-hero-title">
+        {page.headlineLines.map((line, i) => (
+          <span style={i === page.headlineLines.length - 1 ? "display:block;color:var(--g-amber)" : "display:block"}>
+            {line}
+          </span>
+        ))}
+      </h1>
+
+      <p class="g-hero-sub">{page.subhead}</p>
+
+      <div class="g-hero-stats">
+        {page.stats.map((stat) => (
+          <div class="g-hero-stat">
+            <div class="g-hero-stat-number">
+              {stat.number}{stat.unit && <span> {stat.unit}</span>}
+            </div>
+            <div style="white-space: pre-line">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="g-hero-right" id="estimate">
+      <div id="chat-wrap">
+        <p class="g-form-label">Free estimate</p>
+        <p class="g-form-title">{page.formTitle}</p>
+
+        <!-- Chat thread -->
+        <div id="chat-thread" role="log" aria-live="polite" aria-label="Estimate intake conversation"></div>
+
+        <!-- Text input -->
+        <div id="chat-input-row" style="display:none;">
+          <input id="chat-input" class="g-input" type="text" autocomplete="off" />
+          <button id="chat-send" class="g-submit" type="button" style="width:auto;padding:14px 22px;border-radius:2px;flex-shrink:0;">
+            &#8594;
+          </button>
+        </div>
+
+        <!-- Multiple choice options -->
+        <div id="chat-opts" style="display:none;flex-direction:column;gap:8px;"></div>
+
+        <!-- Honeypot — hidden from real users, visible to bots -->
+        <input
+          name="_honey"
+          type="text"
+          style="position:absolute;left:-9999px;opacity:0;pointer-events:none;"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+      </div>
+
+      <!-- Success state -->
+      <div id="chat-success" style="display:none;">
+        <p class="g-form-title" style="font-size:30px;margin-bottom:16px;">We will be in touch.</p>
+        <p class="g-form-note">
+          Expect a call within one business day. You do not need to prepare anything.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY COPY -->
+  <div class="g-body-section">
+    {page.bodyCopy.map((para) => <p>{para}</p>)}
+  </div>
+
+  <!-- INSTALLATION IMAGES -->
+  <div class="g-img-section">
+    <img
+      src="/images/home-reserve-hero.jpg"
+      alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
+      width="1200"
+      height="525"
+      loading="lazy"
+      decoding="async"
+      style="width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16/7;"
+    />
+    <p class="g-img-caption">
+      Home Reserve mounts to your wall indoors. No concrete pad, no outdoor unit, no exhaust.
+      Wall-mounted, silent, and HOA-friendly.
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px;">
+      <img
+        src="/images/home-reserve-garage.jpg"
+        alt="Home Reserve battery backup system installed in a garage"
+        width="400"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+      />
+      <img
+        src="/images/home-reserve-backyard.jpg"
+        alt="Home Reserve system in a small backyard installation"
+        width="400"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+      />
+      <img
+        src="/images/home-reserve-night.jpg"
+        alt="Home Reserve backup power system operating at night during an outage"
+        width="400"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+      />
+      <img
+        src="/images/home-reserve-outdoor.jpg"
+        alt="Home Reserve unit close-up showing installation quality"
+        width="400"
+        height="400"
+        loading="lazy"
+        decoding="async"
+        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+      />
+    </div>
+  </div>
+
+  <!-- PULL QUOTE -->
+  <div class="g-pull">
+    <div class="g-pull-inner">
+      <p class="g-pull-text">
+        <em>{page.pullQuote}</em>
+      </p>
+    </div>
+  </div>
+
+  <!-- REASONS -->
+  <div class="g-reasons">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Why standby power</p>
+    <div class="g-reasons-grid">
+      {page.reasons.map((reason) => (
+        <div>
+          <p class="g-reason-title">{reason.title}</p>
+          <p class="g-reason-body">{reason.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- SERVICE AREA MAP -->
+  <div class="g-map-section">
+    <div class="g-map-header">
+      <p class="g-map-title">Service Area — {page.city}, {page.state}</p>
+      <p class="g-map-note">
+        We serve {page.city} and the surrounding {page.county} area.
+        If you're within reasonable distance, reach out — coverage varies by installer availability.
+      </p>
+    </div>
+    <iframe
+      class="g-map-frame"
+      src={page.mapEmbed}
+      width="100%"
+      height="420"
+      title={`Service area map — ${page.city}, TX`}
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="g-footer">
+    <p class="g-footer-copy">
+      © {new Date().getFullYear()} Olivebank LC | Serving the Houston metro area.
+    </p>
+    <nav class="g-footer-links">
+      <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
+      <a href="/generator/permits" class="g-footer-link">Permits</a>
+      <a href="/generator/about" class="g-footer-link">About</a>
+      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+    </nav>
+  </footer>
+
+</GeneratorLayout>

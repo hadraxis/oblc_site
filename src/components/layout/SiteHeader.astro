@@ -1,0 +1,37 @@
+---
+import { site } from "../../content/site";
+import ShellFrame from "./ShellFrame.astro";
+---
+
+<ShellFrame as="header" compact={true} innerClass="overflow-hidden">
+  <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <a class="flex items-center gap-3 sm:gap-4" href="/">
+      <img
+        src="/logos/olivebank-logo.png"
+        alt="Olivebank LC logo"
+        class="h-11 w-11 rounded-full border border-white/12 object-cover sm:h-12 sm:w-12"
+      />
+      <div>
+        <p class="font-display text-[1.45rem] leading-none text-parchment sm:text-[1.7rem]">
+          Olivebank LC
+        </p>
+        <p class="mt-1 text-[0.68rem] uppercase tracking-[0.24em] text-brass-soft/88 sm:text-xs">
+          Charles Atkins, independent operator
+        </p>
+      </div>
+    </a>
+
+    <nav class="flex flex-wrap gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-parchment/72 sm:text-[0.78rem]">
+      {
+        site.nav.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-full border border-white/10 px-3 py-2 transition hover:border-brass/40 hover:text-parchment sm:px-4"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</ShellFrame>

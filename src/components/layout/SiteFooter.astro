@@ -1,0 +1,38 @@
+---
+import { site } from "../../content/site";
+import ShellFrame from "./ShellFrame.astro";
+---
+
+<ShellFrame as="footer" compact={true} class="pb-8">
+  <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+    <div class="max-w-2xl space-y-3">
+      <p class="font-display text-[1.55rem] leading-none text-parchment sm:text-[1.85rem]">
+        Olivebank LC
+      </p>
+      <p class="max-w-xl text-[0.92rem] leading-7 text-parchment/72">
+        Business home for Charles Atkins. Direct work, focused services, and future offers can all
+        sit under the same surface without turning the site into a pitch deck.
+      </p>
+      <p class="text-[0.78rem] tracking-wide text-parchment/40 pt-1">
+        &copy; {new Date().getFullYear()} Olivebank LC. All rights reserved.
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 lg:items-end">
+      <nav class="flex flex-wrap gap-x-6 gap-y-2 text-[0.78rem] font-medium tracking-widest uppercase text-parchment/50">
+        <a class="transition hover:text-parchment" href="/">Home</a>
+        <a class="transition hover:text-parchment" href="/services">Services</a>
+        <a class="transition hover:text-parchment" href="/about">About</a>
+        <a class="transition hover:text-parchment" href={`mailto:${site.contact.email}`}>Contact</a>
+        <a class="transition hover:text-parchment" href="/generator/houston">EOS Backup Energy</a>
+      </nav>
+      <div class="text-[0.9rem] leading-7 text-parchment/72">
+        <p>
+          <a class="transition hover:text-parchment" href={`mailto:${site.contact.email}`}>
+            {site.contact.email}
+          </a>
+        </p>
+        <p>Phone shared after first contact.</p>
+      </div>
+    </div>
+  </div>
+</ShellFrame>

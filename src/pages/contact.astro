@@ -1,0 +1,91 @@
+---
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import SiteHeader from "../components/layout/SiteHeader.astro";
+import ShellFrame from "../components/layout/ShellFrame.astro";
+import SectionIntro from "../components/sections/SectionIntro.astro";
+import { profile } from "../content/profile";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Contact | Olivebank LC">
+  <main>
+    <SiteHeader />
+
+    <SectionIntro
+      eyebrow="Contact"
+      title="Contact Olivebank LC."
+      summary={profile.contact.intro}
+      actions={[{ href: `mailto:${profile.contactInfo.email}`, label: "Email Charles", primary: true }]}
+    >
+      <article class="soft-card animate-fade-rise rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Email</p>
+        <a class="mt-3 block text-lg text-parchment" href={`mailto:${profile.contactInfo.email}`}>
+          {profile.contactInfo.email}
+        </a>
+        <p class="mt-3 text-sm leading-7 text-parchment/72">{profile.contact.note}</p>
+      </article>
+    </SectionIntro>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">Why This Page Exists</span>
+          <h2 class="page-heading text-parchment">
+            The point is straightforward access, not a choreographed intake sequence.
+          </h2>
+          <p class="section-copy">
+            This part of the site is just the contact surface for the business. If there is a project,
+            a service question, or a future offer that belongs under Olivebank LC, email is enough.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          <article class="soft-card animate-fade-rise-delay-1 rounded-[22px] border border-white/10 bg-white/4 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Direct</p>
+            <p class="mt-4 text-sm leading-7 text-parchment/74">
+              A simple email is the default. No form wall and no public phone number.
+            </p>
+          </article>
+
+          <article class="soft-card animate-fade-rise-delay-2 rounded-[22px] border border-white/10 bg-white/4 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Production-minded</p>
+            <p class="mt-4 text-sm leading-7 text-parchment/74">
+              The contact path stays simple now, with room for a more structured intake later if it is useful.
+            </p>
+          </article>
+
+          <article class="soft-card animate-fade-rise-delay-3 rounded-[22px] border border-white/10 bg-white/4 p-5">
+            <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Flexible</p>
+            <p class="mt-4 text-sm leading-7 text-parchment/74">
+              The same business surface can support direct work now and more specific project pages later.
+            </p>
+          </article>
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section" class="pb-10">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">What Happens Next</span>
+          <h2 class="page-heading text-parchment">The contact path stays simple on purpose.</h2>
+          <p class="section-copy">{profile.contact.nextStep}</p>
+        </div>
+
+        <div class="grid gap-3">
+          <div class="soft-card animate-fade-rise-delay-1 rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/72">
+            Email is the default starting point.
+          </div>
+          <div class="soft-card animate-fade-rise-delay-2 rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/72">
+            If there is a fit, Charles replies directly and keeps the next step clear.
+          </div>
+          <div class="soft-card animate-fade-rise-delay-3 rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/72">
+            Phone is shared after first contact instead of posted publicly.
+          </div>
+        </div>
+      </div>
+    </ShellFrame>
+
+    <SiteFooter />
+  </main>
+</BaseLayout>

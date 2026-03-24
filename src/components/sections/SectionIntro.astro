@@ -1,0 +1,52 @@
+---
+import ShellFrame from "../layout/ShellFrame.astro";
+
+interface Action {
+  href: string;
+  label: string;
+  primary?: boolean;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  summary?: string;
+  actions?: Action[];
+  compact?: boolean;
+  large?: boolean;
+}
+
+const {
+  eyebrow,
+  title,
+  summary,
+  actions = [],
+  compact = false,
+  large = false
+} = Astro.props;
+---
+
+<ShellFrame as="section" compact={compact}>
+  <div class="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+    <div class="space-y-5">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1 class:list={[large ? "hero-title" : "page-heading", "text-parchment"]}>{title}</h1>
+      {summary && <p class="section-copy max-w-2xl">{summary}</p>}
+      {actions.length > 0 && (
+        <div class="cta-group pt-2">
+          {actions.map((action) => (
+            <a
+              href={action.href}
+              class={action.primary ? "button-primary" : "button-secondary"}
+            >
+              {action.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+    <div class="space-y-4">
+      <slot />
+    </div>
+  </div>
+</ShellFrame>

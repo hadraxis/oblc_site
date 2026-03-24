@@ -1,0 +1,132 @@
+---
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import SiteHeader from "../components/layout/SiteHeader.astro";
+import ShellFrame from "../components/layout/ShellFrame.astro";
+import SectionIntro from "../components/sections/SectionIntro.astro";
+import { profile } from "../content/profile";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Services | Olivebank LC">
+  <main>
+    <SiteHeader />
+
+    <SectionIntro
+      eyebrow="Services"
+      title="Current areas of work under Olivebank LC."
+      summary={profile.services.intro}
+    >
+      <article class="soft-card animate-fade-rise rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">Typical fit</p>
+        <p class="mt-3 text-sm leading-7 text-parchment/72">{profile.audience.intro}</p>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-parchment/68">
+          {
+            profile.audience.items.slice(0, 3).map((item) => (
+              <li>{item}</li>
+            ))
+          }
+        </ul>
+      </article>
+    </SectionIntro>
+
+    <ShellFrame as="section">
+      <div class="space-y-6">
+        <div class="space-y-5">
+          <span class="eyebrow">Current Focus</span>
+          <h2 class="page-heading text-parchment">
+            These are working areas, not rigid product labels.
+          </h2>
+          <p class="section-copy">
+            Some of these stay as direct service categories. Some may turn into more focused pages,
+            offers, or subdomain-level businesses later if they become substantial enough.
+          </p>
+          <p class="section-copy">
+            In practice that can mean CRM work in HubSpot or Pipedrive, reporting discipline,
+            customer communication systems, follow-up sequence design, or workflow automation using
+            tools like n8n and similar platforms.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {
+            profile.services.pillars.map((item, index) => (
+              <article
+                class:list={[
+                  "soft-card rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6",
+                  index === 0 ? "animate-fade-rise-delay-1" : index === 1 ? "animate-fade-rise-delay-2" : "animate-fade-rise-delay-3"
+                ]}
+              >
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+                  {item.title}
+                </p>
+                <p class="mt-4 text-sm leading-7 text-parchment/74">{item.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">How It Usually Starts</span>
+          <h2 class="page-heading text-parchment">
+            The first pass is about understanding the business before naming the solution too quickly.
+          </h2>
+          <p class="section-copy">{profile.workflow.intro}</p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            profile.workflow.steps.map((step, index) => (
+              <article
+                class:list={[
+                  "soft-card rounded-[22px] border border-white/10 bg-white/4 p-5",
+                  index < 2 ? "animate-fade-rise-delay-1" : "animate-fade-rise-delay-2"
+                ]}
+              >
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+                  {step.title}
+                </p>
+                <p class="mt-4 text-sm leading-7 text-parchment/74">{step.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <ShellFrame as="section" class="pb-10">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div class="space-y-5">
+          <span class="eyebrow">How It Fits</span>
+          <h2 class="page-heading text-parchment">
+            The work stays broad enough to be useful and specific enough to be real.
+          </h2>
+          <p class="section-copy">
+            Olivebank covers the operating side of sales, communication, systems, and follow-through.
+            As certain pieces mature, they can stand on their own as more focused offers.
+          </p>
+        </div>
+
+        <div class="grid gap-3">
+          {
+            profile.plate.items.slice(0, 3).map((item, index) => (
+              <div
+                class:list={[
+                  "soft-card rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/72",
+                  index === 0 ? "animate-fade-rise-delay-1" : index === 1 ? "animate-fade-rise-delay-2" : "animate-fade-rise-delay-3"
+                ]}
+              >
+                {item}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <SiteFooter />
+  </main>
+</BaseLayout>

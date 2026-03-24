@@ -1,0 +1,27 @@
+---
+interface Props {
+  as?: "div" | "header" | "footer" | "section";
+  compact?: boolean;
+  class?: string;
+  innerClass?: string;
+}
+
+const {
+  as: Tag = "section",
+  compact = false,
+  class: className = "",
+  innerClass = ""
+} = Astro.props;
+---
+
+<Tag class:list={["container-site page-frame", compact ? "py-4" : "py-6", className]}>
+  <div
+    class:list={[
+      "section-panel",
+      compact ? "px-4 py-4 sm:px-6 sm:py-5" : "px-6 py-6 sm:px-8 sm:py-7",
+      innerClass
+    ]}
+  >
+    <slot />
+  </div>
+</Tag>

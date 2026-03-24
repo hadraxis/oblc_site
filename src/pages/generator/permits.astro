@@ -1,0 +1,301 @@
+---
+import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
+---
+
+<GeneratorLayout
+  title="Backup Power Permits in Houston, TX | What Homeowners Need to Know"
+  description="Electrical permits, fire permits, plan review fees, and timelines for battery backup and generator installations in Houston and Harris County. Real numbers, no guessing."
+  city="Houston Metro"
+>
+
+  <nav class="g-nav">
+    <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
+    <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
+  </nav>
+
+  <!-- HERO -->
+  <div style="padding: 140px 48px 80px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid var(--g-rule);">
+    <p class="g-eyebrow">Houston, TX | Harris County | NEC 2020</p>
+    <h1 class="g-hero-title" style="font-size: clamp(48px, 6vw, 84px); margin-bottom: 24px; line-height: 0.95;">
+      Backup Power<br />Permits.<br />Plain English.
+    </h1>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--g-slate); max-width: 580px;">
+      Battery backup and generator installations in Houston require permits in most cases. Here is
+      exactly what that means, what it costs, and how long it takes. If you are getting quotes from
+      multiple installers, this page will help you understand what they should be including.
+    </p>
+  </div>
+
+  <!-- BASICS -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 72px 48px 0;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">The basics</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 40px;" class="permits-grid-3">
+      {[
+        {
+          title: "Not every municipality requires it",
+          body: "Houston Permitting Center has its own process. Neighboring jurisdictions like unincorporated Harris County, Sugar Land, Katy, and others each have different requirements. Some areas move faster because permitting is simpler or automated."
+        },
+        {
+          title: "Where required, budget 2 to 6 weeks",
+          body: "Standard permit timelines run two to three weeks. If a plan revision, re-inspection, or fire review is required, expect four to six weeks. We give you a realistic estimate for your specific municipality before the project starts."
+        },
+        {
+          title: "Fire permit may also apply",
+          body: "Battery systems using lithium-ion chemistry may trigger a fire or life-safety review depending on installation location, proximity to habitable spaces, and local requirements. This is separate from the electrical permit."
+        }
+      ].map((item) => (
+        <div style="border-top: 2px solid var(--g-amber); padding-top: 20px;">
+          <p style="font-size: 13px; font-weight: 500; letter-spacing: 0.5px; color: var(--g-black); margin-bottom: 12px; line-height: 1.4;">{item.title}</p>
+          <p style="font-size: 14px; line-height: 1.75; color: var(--g-slate);">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- CODE BASIS -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 64px 48px 0;">
+    <p style="font-size: 13px; color: var(--g-muted); border: 1px solid var(--g-rule); padding: 16px 20px; line-height: 1.7;">
+      <strong style="color: var(--g-black); font-weight: 500;">Code basis:</strong> City of Houston follows NEC 2020 as amended, submitted through Houston iPermits and ProjectDox. Electrical permits must be filed by a licensed master electrician. This page covers battery/ESS, generator, and hybrid systems. Solar PV systems are excluded.
+    </p>
+  </div>
+
+  <!-- SECTION A: BATTERY -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 72px 48px 0;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Section A: Battery / ESS only</p>
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: 1px; color: var(--g-black); margin: 20px 0 32px;">
+      Home Reserve and similar systems.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="permits-grid-2">
+      <div>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          Battery systems installed as Energy Storage Systems (ESS) provide stored electrical power
+          during outages or grid instability. The system includes batteries, inverters, disconnects,
+          and monitoring components.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          Battery-specific permit submissions commonly include UL9540 and UL9540A safety documentation,
+          equipment installation manuals, clearance and placement details, and indoor or garage
+          location notes if applicable.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate);">
+          A fire and life-safety review may apply depending on battery chemistry, installation location,
+          and proximity to habitable spaces.
+        </p>
+      </div>
+
+      <div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--g-black);">
+              <th style="text-align: left; padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Permit component</th>
+              <th style="text-align: right; padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Typical cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Electrical permit", "$150 to $300"],
+              ["Plan review", "$100 to $400"],
+              ["Fire / life safety review", "$0 to $150"],
+              ["Electrician permit handling", "$300 to $500"],
+            ].map(([label, cost], i) => (
+              <tr style={`border-bottom: 1px solid var(--g-rule); background: ${i % 2 === 0 ? 'transparent' : 'rgba(0,0,0,0.02)'}`}>
+                <td style="padding: 12px 0; color: var(--g-slate); font-size: 14px;">{label}</td>
+                <td style="padding: 12px 0; color: var(--g-black); font-weight: 500; text-align: right;">{cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center;">
+          {[
+            ["Low", "~$600"],
+            ["Typical", "$900 to $1,200"],
+            ["High", "~$1,400"],
+          ].map(([label, cost]) => (
+            <div style="background: var(--g-off-white); padding: 16px 12px; border: 1px solid var(--g-rule);">
+              <p style="font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted); margin-bottom: 6px;">{label}</p>
+              <p style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: var(--g-black);">{cost}</p>
+            </div>
+          ))}
+        </div>
+        <p style="font-size: 11px; color: var(--g-muted); margin-top: 10px;">All-in totals include city fees and electrician handling. Figures are estimates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION B: GENERATOR -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 72px 48px 0;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Section B: Generator only</p>
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: 1px; color: var(--g-black); margin: 20px 0 32px;">
+      Standby generator systems.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="permits-grid-2">
+      <div>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          Generator systems provide backup power through an engine-driven alternator and are typically
+          installed outdoors with an automatic transfer switch (ATS).
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          Generator permit submissions typically include specification sheets, ATS or interlock wiring
+          diagrams, service-side or load-side connection details, and fuel source confirmation (natural
+          gas or propane).
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate);">
+          Fire review is generally not required for standard residential outdoor generators unless
+          special site conditions apply. Running a whole home on natural gas costs roughly $20 per day,
+          which is the ongoing cost the equipment cost does not reflect.
+        </p>
+      </div>
+
+      <div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--g-black);">
+              <th style="text-align: left; padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Permit component</th>
+              <th style="text-align: right; padding: 10px 0; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted);">Typical cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Electrical permit", "$150 to $300"],
+              ["Plan review", "$0 to $150"],
+              ["Fire review", "Not typically required"],
+              ["Electrician permit handling", "$200 to $400"],
+            ].map(([label, cost], i) => (
+              <tr style={`border-bottom: 1px solid var(--g-rule); background: ${i % 2 === 0 ? 'transparent' : 'rgba(0,0,0,0.02)'}`}>
+                <td style="padding: 12px 0; color: var(--g-slate); font-size: 14px;">{label}</td>
+                <td style="padding: 12px 0; color: var(--g-black); font-weight: 500; text-align: right;">{cost}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center;">
+          {[
+            ["Low", "~$400"],
+            ["Typical", "$600 to $850"],
+            ["High", "~$1,000"],
+          ].map(([label, cost]) => (
+            <div style="background: var(--g-off-white); padding: 16px 12px; border: 1px solid var(--g-rule);">
+              <p style="font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted); margin-bottom: 6px;">{label}</p>
+              <p style="font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: var(--g-black);">{cost}</p>
+            </div>
+          ))}
+        </div>
+        <p style="font-size: 11px; color: var(--g-muted); margin-top: 10px;">All-in totals include city fees and electrician handling. Figures are estimates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION C: HYBRID -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 72px 48px 0;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Section C: Battery and generator hybrid</p>
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: 1px; color: var(--g-black); margin: 20px 0 32px;">
+      Combined systems.
+    </p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="permits-grid-2">
+      <div>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate);">
+          Hybrid projects combine a battery or ESS with a generator system. These require coordinated
+          documentation covering both the storage and generation components. Plan review requirements
+          are typically more involved and permit fees reflect that.
+        </p>
+      </div>
+      <div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; text-align: center;">
+          {[
+            ["Low", "~$850"],
+            ["Typical", "$1,200 to $1,700"],
+            ["High", "$2,100+"],
+          ].map(([label, cost]) => (
+            <div style="background: var(--g-off-white); padding: 20px 12px; border: 1px solid var(--g-rule);">
+              <p style="font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted); margin-bottom: 8px;">{label}</p>
+              <p style="font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 1px; color: var(--g-black);">{cost}</p>
+            </div>
+          ))}
+        </div>
+        <p style="font-size: 11px; color: var(--g-muted); margin-top: 10px;">All-in totals include city fees and electrician handling. Figures are estimates.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE HANDLE -->
+  <div style="background: var(--g-black); padding: 72px 48px; margin-top: 72px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <p style="font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-amber); margin-bottom: 20px;">What we handle for you</p>
+      <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(32px, 4vw, 56px); line-height: 1; letter-spacing: 1px; color: var(--g-off-white); max-width: 600px; margin-bottom: 40px;">
+        You do not file anything. We do.
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px;" class="permits-grid-3">
+        {[
+          { label: "Permit submission", body: "We file the electrical permit and coordinate any required plan review through the correct municipal portal." },
+          { label: "Fire review coordination", body: "Where a fire or life-safety review applies, we handle the submission and any documentation requests." },
+          { label: "Revision and re-inspection", body: "If a plan revision or re-inspection is required, we handle the response. You receive documents to sign as they arrive. That is the full extent of your involvement." },
+        ].map((item) => (
+          <div style="border-left: 2px solid var(--g-amber); padding-left: 24px;">
+            <p style="font-size: 12px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--g-amber); margin-bottom: 10px;">{item.label}</p>
+            <p style="font-size: 14px; line-height: 1.75; color: #8a8a82;">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="padding: 80px 48px; max-width: 1200px; margin: 0 auto; text-align: center;">
+    <p class="g-eyebrow" style="justify-content: center;">Ready to get started</p>
+    <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: 1px; margin: 20px auto 32px; color: var(--g-black);">
+      Get a free estimate for your home.
+    </p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+      {[
+        { label: "Houston", href: "/generator/houston" },
+        { label: "Katy", href: "/generator/katy" },
+        { label: "Sugar Land", href: "/generator/sugar-land" },
+        { label: "Pearland", href: "/generator/pearland" },
+        { label: "The Woodlands", href: "/generator/the-woodlands" },
+      ].map((city) => (
+        <a
+          href={`${city.href}#estimate`}
+          style="display: inline-block; background: var(--g-black); color: var(--g-off-white); font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 14px 24px; transition: background 0.2s;"
+        >
+          {city.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <footer class="g-footer">
+    <p class="g-footer-copy">
+      &copy; {new Date().getFullYear()} Olivebank LC | EOS Backup Energy and Battery | Spring, TX
+    </p>
+    <nav class="g-footer-links">
+      <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
+      <a href="/generator/about" class="g-footer-link">About</a>
+      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+    </nav>
+  </footer>
+
+  <style>
+    @media (max-width: 860px) {
+      .permits-grid-2 {
+        grid-template-columns: 1fr !important;
+      }
+      .permits-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+    }
+    @media (max-width: 560px) {
+      [style*="padding: 140px 48px"] {
+        padding: 120px 20px 60px !important;
+      }
+    }
+  </style>
+
+</GeneratorLayout>

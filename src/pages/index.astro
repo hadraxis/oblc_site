@@ -1,0 +1,91 @@
+---
+import SiteFooter from "../components/layout/SiteFooter.astro";
+import SiteHeader from "../components/layout/SiteHeader.astro";
+import ShellFrame from "../components/layout/ShellFrame.astro";
+import SectionIntro from "../components/sections/SectionIntro.astro";
+import { profile } from "../content/profile";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <main>
+    <SiteHeader />
+
+    <SectionIntro
+      eyebrow={profile.hero.eyebrow}
+      title={profile.hero.headline}
+      summary={profile.hero.copy}
+      large={true}
+      actions={[
+        { href: "/about", label: "About Charles", primary: true },
+        { href: "/services", label: "Services" }
+      ]}
+    >
+      <article class="soft-card animate-fade-rise rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+          {profile.hero.summaryCard.title}
+        </p>
+        <p class="mt-3 text-sm leading-7 text-parchment/74">
+          {profile.hero.summaryCard.body}
+        </p>
+      </article>
+
+      <div class="grid gap-3">
+        {
+          profile.hero.signals.map((item, index) => (
+            <div
+              class:list={[
+                "soft-card rounded-[20px] border border-white/10 bg-black/16 px-5 py-4 text-sm leading-7 text-parchment/76",
+                index === 0 ? "animate-fade-rise-delay-1" : index === 1 ? "animate-fade-rise-delay-2" : "animate-fade-rise-delay-3"
+              ]}
+            >
+              {item}
+            </div>
+          ))
+        }
+      </div>
+    </SectionIntro>
+
+    <ShellFrame as="section">
+      <div class="grid gap-8 lg:grid-cols-[0.84fr_1.16fr] lg:items-start">
+        <div class="space-y-5">
+          <span class="eyebrow">What Olivebank Covers</span>
+          <h2 class="page-heading text-parchment">
+            The business covers direct operating work now, while leaving room for more focused projects later.
+          </h2>
+          <p class="section-copy">{profile.services.intro}</p>
+          <p class="section-copy">
+            That includes direct support around sales operations, customer care, reporting, and
+            process structure. It can also include building something clearer and more distinct once
+            an offer deserves its own page or subdomain.
+          </p>
+          <p class="section-copy">
+            The working surfaces can be tools like HubSpot, Pipedrive, reporting systems, follow-up
+            sequences, and workflow automation, but the value is in understanding how the business
+            should run across them.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {
+            profile.services.pillars.map((item, index) => (
+              <article
+                class:list={[
+                  "soft-card rounded-[22px] border border-white/10 bg-white/4 p-5 sm:p-6",
+                  index % 2 === 0 ? "animate-fade-rise-delay-1" : "animate-fade-rise-delay-2"
+                ]}
+              >
+                <p class="text-xs font-bold uppercase tracking-[0.22em] text-brass-soft">
+                  {item.title}
+                </p>
+                <p class="mt-4 text-sm leading-7 text-parchment/74">{item.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </ShellFrame>
+
+    <SiteFooter />
+  </main>
+</BaseLayout>
