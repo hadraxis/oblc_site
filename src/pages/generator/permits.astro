@@ -1,5 +1,14 @@
 ---
 import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "EOS Backup Energy", "item": "https://olivebanklc.com/generator/houston" },
+    { "@type": "ListItem", "position": 2, "name": "Permits" }
+  ]
+};
 ---
 
 <GeneratorLayout
@@ -8,7 +17,9 @@ import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
   city="Houston Metro"
 >
 
-  <nav class="g-nav">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="g-nav" aria-label="Site navigation">
     <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
     <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
   </nav>
@@ -274,10 +285,10 @@ import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
     <p class="g-footer-copy">
       &copy; {new Date().getFullYear()} Olivebank LC | EOS Backup Energy and Battery | Spring, TX
     </p>
-    <nav class="g-footer-links">
+    <nav class="g-footer-links" aria-label="Footer navigation">
       <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
       <a href="/generator/about" class="g-footer-link">About</a>
-      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+      <a href="https://olivebanklc.com" class="g-footer-link" rel="noopener noreferrer">Olivebank LC</a>
     </nav>
   </footer>
 

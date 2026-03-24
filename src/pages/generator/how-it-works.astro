@@ -1,5 +1,31 @@
 ---
 import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How does Home Reserve compare to a Generac?", "acceptedAnswer": { "@type": "Answer", "text": "A Generac Guardian runs on natural gas or propane, installs outside on a concrete pad, and kicks on automatically when the grid fails. It is a proven product with a long track record. The tradeoffs are fuel cost, annual maintenance, noise during operation, and HOA restrictions in many Houston communities. EOS Backup Energy and Battery handles all of the permitting and installation coordination." } },
+    { "@type": "Question", "name": "I already got a Generac quote. Is it worth comparing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Send it over. We will put both options side by side, total installed cost, ongoing fuel and maintenance over 10 years, what each covers during a real Houston outage. If the generator makes more sense for your situation we will tell you." } },
+    { "@type": "Question", "name": "How do I get started without an in-person visit?", "acceptedAnswer": { "@type": "Answer", "text": "Send us a photo of your electrical panel and your utility bill. Email them or upload through the form. We confirm fit from that in most cases. If we need anything else we will ask." } },
+    { "@type": "Question", "name": "How long does the whole process take?", "acceptedAnswer": { "@type": "Answer", "text": "Typically four to eight weeks from confirmation. Permitting is the main variable. We will give you a realistic timeline for your specific municipality upfront." } },
+    { "@type": "Question", "name": "Do I need solar panels?", "acceptedAnswer": { "@type": "Answer", "text": "No. Home Reserve charges from the grid during normal operation and recharges automatically every time power returns. Solar is compatible if you have it. Not required." } },
+    { "@type": "Question", "name": "How big a system do I need?", "acceptedAnswer": { "@type": "Answer", "text": "For most Houston suburban homes Home Reserve at 27 kWh handles the real outage scenario comfortably, fridge, fans, Wi-Fi, phones, lights, for 50 or more hours at storm-normal draw. We confirm the right fit from your panel photo and utility bill." } },
+    { "@type": "Question", "name": "What happens during a power outage?", "acceptedAnswer": { "@type": "Answer", "text": "Instant switchover. Zero milliseconds of disruption when used with the smart panel. Your designated critical circuits stay on." } },
+    { "@type": "Question", "name": "What about Harvey or Uri-level events?", "acceptedAnswer": { "@type": "Answer", "text": "Home Reserve covers 50 or more hours at storm-normal draw with zero recharging. In a winter event gas heat keeps running and Home Reserve powers the air handler fan." } },
+    { "@type": "Question", "name": "Will my HOA have a problem with this?", "acceptedAnswer": { "@type": "Answer", "text": "Unlikely. Wall-mounted, no exhaust, no noise, no outdoor pad. There is nothing to object to in most cases. If your HOA has specific requirements we will work through them as part of the process." } },
+    { "@type": "Question", "name": "What does maintenance look like?", "acceptedAnswer": { "@type": "Answer", "text": "None. No oil changes, no tune-ups, no filter replacements. Firmware updates automatically. 10-year warranty." } }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "EOS Backup Energy", "item": "https://olivebanklc.com/generator/houston" },
+    { "@type": "ListItem", "position": 2, "name": "How It Works" }
+  ]
+};
 ---
 
 <GeneratorLayout
@@ -8,7 +34,10 @@ import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
   city="Houston Metro"
 >
 
-  <nav class="g-nav">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="g-nav" aria-label="Site navigation">
     <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
     <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
   </nav>
@@ -248,10 +277,10 @@ import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
     <p class="g-footer-copy">
       &copy; {new Date().getFullYear()} Olivebank LC | EOS Backup Energy and Battery | Spring, TX
     </p>
-    <nav class="g-footer-links">
+    <nav class="g-footer-links" aria-label="Footer navigation">
       <a href="/generator/permits" class="g-footer-link">Permits</a>
       <a href="/generator/about" class="g-footer-link">About</a>
-      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+      <a href="https://olivebanklc.com" class="g-footer-link" rel="noopener noreferrer">Olivebank LC</a>
     </nav>
   </footer>
 

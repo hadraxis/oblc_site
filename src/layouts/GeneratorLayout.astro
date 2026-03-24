@@ -19,12 +19,18 @@ const schema = {
   "name": "Eos Backup Energy and Battery",
   "description": "Home backup power systems for Houston area homeowners. We install Home Reserve whole-home battery backup systems.",
   "url": canonicalUrl,
+  "telephone": "+18339893737",
   "email": "xavi@olivebanklc.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Spring",
     "addressRegion": "TX",
     "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 30.0991259,
+    "longitude": -95.4433484
   },
   "areaServed": [
     { "@type": "City", "name": "Houston" },
@@ -89,6 +95,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <!-- LocalBusiness schema -->
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+    <link rel="icon" href="/logos/olivebank-logo.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -255,18 +263,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           });
 
           try {
-            // TODO: replace YOUR_FORM_ID with your Formspree endpoint
-            // Sign up free at formspree.io, create a form, paste the ID here
-            // e.g. https://formspree.io/f/abcdefgh
-            await fetch('https://formspree.io/f/meeryzka', {
+            const body = new FormData();
+            body.append('entry.658401601',  this.data.name    || '');
+            body.append('entry.320049497',  this.data.address || '');
+            body.append('entry.1607924350', this.data.phone   || '');
+            body.append('entry.1703934478', this.data.email   || '');
+            body.append('entry.1591116334', this.data.concern || '');
+            body.append('entry.1266102745', this.data.quotes  || '');
+            body.append('entry.681920716',  this.data.notes   || '');
+            body.append('entry.2077301753', this.cityName     || '');
+            fetch('https://docs.google.com/forms/d/e/1FAIpQLSdZhjW5MVYH1BVucqfrKx-QQOXvz0u2_phEgo4LMoBNWBooHg/formResponse', {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-              body: JSON.stringify({
-                ...this.data,
-                city: this.cityName,
-                _subject: `New lead - ${this.cityName} - ${this.data.name || 'unnamed'}`,
-                _replyto: this.data.email,
-              }),
+              mode: 'no-cors',
+              body,
             });
           } catch (_) {
             // GTM event already fired — fail silently

@@ -1,6 +1,15 @@
 ---
 import GeneratorLayout from "../../layouts/GeneratorLayout.astro";
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "EOS Backup Energy", "item": "https://olivebanklc.com/generator/houston" },
+    { "@type": "ListItem", "position": 2, "name": "About" }
+  ]
+};
+
 // Google Maps embed for EOS Backup Energy and Battery business location
 // Locale corrected from pt-BR to en-US
 const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98192457639!2d-95.44334839999999!3d30.099125899999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864735b28d38cfef%3A0x6a08eed690a8ebd1!2sEos%20Energy%20Backup%20and%20Battery!5e1!3m2!1sen!2sus!4v1774306450802!5m2!1sen!2sus";
@@ -12,7 +21,9 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
   city="Houston Metro"
 >
 
-  <nav class="g-nav">
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <nav class="g-nav" aria-label="Site navigation">
     <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
     <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
   </nav>
@@ -188,9 +199,9 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
     <p class="g-footer-copy">
       &copy; {new Date().getFullYear()} Olivebank LC | EOS Backup Energy and Battery | Spring, TX
     </p>
-    <nav class="g-footer-links">
+    <nav class="g-footer-links" aria-label="Footer navigation">
       <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
-      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
+      <a href="https://olivebanklc.com" class="g-footer-link" rel="noopener noreferrer">Olivebank LC</a>
     </nav>
   </footer>
 
