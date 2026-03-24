@@ -139,6 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             { id: 'name',    msg: "Hi. What is your name?",                                  type: 'text',    placeholder: 'Your full name',         inputType: 'text' },
             { id: 'address', msg: () => `Thanks ${this.data.name}. What is your home address?`, type: 'text', placeholder: 'Street address and city', inputType: 'text' },
             { id: 'phone',   msg: "Best number to reach you?",                               type: 'text',    placeholder: 'Phone number',           inputType: 'tel'  },
+            { id: 'email',   msg: "And your email address?",                                  type: 'text',    placeholder: 'Email address',          inputType: 'email'},
             { id: 'concern', msg: "What is your main concern right now?", type: 'options', opts: [
               'Outages happen too often',
               'Medical equipment needs reliable power',
@@ -258,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ...this.data,
                 city: this.cityName,
                 _subject: `New lead - ${this.cityName} - ${this.data.name || 'unnamed'}`,
-                _replyto: this.data.phone,
+                _replyto: this.data.email,
               }),
             });
           } catch (_) {
