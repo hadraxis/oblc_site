@@ -16,7 +16,12 @@ const { page } = Astro.props;
 
   <!-- NAV -->
   <nav class="g-nav" aria-label="Site navigation">
-    <span class="g-nav-logo">EOS Backup Energy</span>
+    <a href="/generator/houston" class="g-nav-logo">EOS Backup Energy</a>
+    <div class="g-nav-links">
+      <a href="/generator/how-it-works" class="g-nav-link">How it works</a>
+      <a href="/generator/permits" class="g-nav-link">Permits</a>
+      <a href="/generator/about" class="g-nav-link">About</a>
+    </div>
     <a href="#estimate" class="g-nav-cta">Get a free estimate</a>
   </nav>
 
@@ -200,7 +205,7 @@ const { page } = Astro.props;
       <a href="/generator/how-it-works" class="g-footer-link">How it works</a>
       <a href="/generator/permits" class="g-footer-link">Permits</a>
       <a href="/generator/about" class="g-footer-link">About</a>
-      <a href="https://olivebanklc.com" class="g-footer-link" rel="noopener noreferrer">Olivebank LC</a>
+      <a href="https://olivebanklc.com" class="g-footer-link">Olivebank LC</a>
     </nav>
   </footer>
 
