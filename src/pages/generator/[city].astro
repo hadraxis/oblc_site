@@ -99,45 +99,44 @@ const { page } = Astro.props;
 
   <!-- INSTALLATION IMAGES -->
   <div class="g-img-section">
-    <picture>
-      <source srcset="/images/home-reserve-hero.webp" type="image/webp" />
-      <img
-        src="/images/home-reserve-hero-fallback.jpg"
-        alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
-        width="1200"
-        height="1600"
-        loading="lazy"
-        decoding="async"
-        style="width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16/7;"
-      />
-    </picture>
-    <p class="g-img-caption">
-      Home Reserve mounts to your wall indoors. No concrete pad, no outdoor unit, no exhaust.
-      Wall-mounted, silent, and HOA-friendly.
-    </p>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px;">
-      <picture>
+    <div class="g-img-top-row">
+      <picture class="g-img-top-portrait">
+        <source srcset="/images/home-reserve-hero.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-hero-fallback.jpg"
+          alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
+          width="1536"
+          height="2048"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+      <picture class="g-img-top-landscape">
         <source srcset="/images/home-reserve-garage.webp" type="image/webp" />
         <img
           src="/images/home-reserve-garage-fallback.jpg"
           alt="Home Reserve battery backup system installed in a garage"
-          width="800"
-          height="600"
+          width="2048"
+          height="1536"
           loading="lazy"
           decoding="async"
-          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
         />
       </picture>
+    </div>
+    <p class="g-img-caption">
+      Home Reserve mounts to your wall indoors. No concrete pad, no outdoor unit, no exhaust.
+      Wall-mounted, silent, and HOA-friendly.
+    </p>
+    <div class="g-img-bottom-row">
       <picture>
         <source srcset="/images/home-reserve-backyard.webp" type="image/webp" />
         <img
           src="/images/home-reserve-backyard-fallback.jpg"
           alt="Home Reserve system in a small backyard installation"
-          width="800"
-          height="1067"
+          width="1536"
+          height="2048"
           loading="lazy"
           decoding="async"
-          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
         />
       </picture>
       <picture>
@@ -145,11 +144,10 @@ const { page } = Astro.props;
         <img
           src="/images/home-reserve-night-fallback.jpg"
           alt="Home Reserve backup power system operating at night during an outage"
-          width="800"
-          height="1067"
+          width="1536"
+          height="2048"
           loading="lazy"
           decoding="async"
-          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
         />
       </picture>
       <picture>
@@ -157,11 +155,10 @@ const { page } = Astro.props;
         <img
           src="/images/home-reserve-outdoor-fallback.jpg"
           alt="Home Reserve unit close-up showing installation quality"
-          width="800"
-          height="1067"
+          width="1536"
+          height="2048"
           loading="lazy"
           decoding="async"
-          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
         />
       </picture>
     </div>

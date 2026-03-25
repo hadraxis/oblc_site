@@ -78,6 +78,23 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
       </div>
     </div>
 
+    <!-- PRODUCT IMAGE: wall-mounted unit -->
+    <div class="about-img-break">
+      <picture>
+        <source srcset="/images/home-reserve-hero.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-hero-fallback.jpg"
+          alt="Home Reserve whole-home backup power system wall-mounted indoors"
+          width="1536"
+          height="2048"
+          loading="lazy"
+          decoding="async"
+          class="about-img-full"
+        />
+      </picture>
+      <p class="about-img-caption">Wall-mounted Home Reserve unit. No concrete pad, no outdoor footprint, no exhaust.</p>
+    </div>
+
     <div style="border-top: 1px solid var(--g-rule); padding-top: 64px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start;" class="about-grid">
       <div>
         <div class="g-section-rule"></div>
@@ -98,6 +115,23 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
           is not right for your situation.
         </p>
       </div>
+    </div>
+
+    <!-- PRODUCT IMAGE: garage install -->
+    <div class="about-img-break about-img-break--dark">
+      <picture>
+        <source srcset="/images/home-reserve-garage.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-garage-fallback.jpg"
+          alt="Home Reserve battery backup system installed in a residential garage"
+          width="2048"
+          height="1536"
+          loading="lazy"
+          decoding="async"
+          class="about-img-full"
+        />
+      </picture>
+      <p class="about-img-caption about-img-caption--dark">Garage installation. Fits on any wall — takes up less space than a water heater.</p>
     </div>
 
     <div style="border-top: 1px solid var(--g-rule); padding-top: 64px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start;" class="about-grid">
@@ -122,6 +156,37 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
           you reach out.
         </p>
       </div>
+    </div>
+
+    <!-- PRODUCT IMAGES: outdoor + night -->
+    <div class="about-img-break">
+      <div class="about-img-pair">
+        <picture>
+          <source srcset="/images/home-reserve-outdoor.webp" type="image/webp" />
+          <img
+            src="/images/home-reserve-outdoor-fallback.jpg"
+            alt="Home Reserve unit close-up showing installation quality"
+            width="1536"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+            class="about-img-full"
+          />
+        </picture>
+        <picture>
+          <source srcset="/images/home-reserve-night.webp" type="image/webp" />
+          <img
+            src="/images/home-reserve-night-fallback.jpg"
+            alt="Home Reserve backup power system operating at night during an outage"
+            width="1536"
+            height="2048"
+            loading="lazy"
+            decoding="async"
+            class="about-img-full"
+          />
+        </picture>
+      </div>
+      <p class="about-img-caption">Left: installation detail. Right: the system running silently during a nighttime outage.</p>
     </div>
 
     <div style="border-top: 1px solid var(--g-rule); padding-top: 64px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 64px; align-items: start;" class="about-grid">
@@ -213,10 +278,68 @@ const mapsEmbed = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2289.98
   </footer>
 
   <style>
+    .about-img-break {
+      padding: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-img-break--dark {
+      background: var(--g-black);
+      max-width: 100%;
+      padding: 48px;
+    }
+
+    .about-img-break--dark .about-img-full,
+    .about-img-break--dark .about-img-pair {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-img-full {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .about-img-pair img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .about-img-caption {
+      font-size: 12px;
+      color: var(--g-muted);
+      letter-spacing: 0.3px;
+      line-height: 1.5;
+      margin-top: 14px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-img-caption--dark {
+      color: #908c86;
+    }
+
     @media (max-width: 768px) {
       .about-grid {
         grid-template-columns: 1fr !important;
         gap: 32px !important;
+      }
+      .about-img-pair {
+        grid-template-columns: 1fr;
+      }
+      .about-img-break,
+      .about-img-break--dark {
+        padding: 24px;
       }
     }
   </style>
