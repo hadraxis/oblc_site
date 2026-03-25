@@ -101,7 +101,11 @@ const { page } = Astro.props;
   <div class="g-img-section">
     <div class="g-img-top-row">
       <picture class="g-img-top-portrait">
-        <source srcset="/images/home-reserve-hero.webp" type="image/webp" />
+        <source
+          srcset="/images/home-reserve-hero-400w.webp 400w, /images/home-reserve-hero-640w.webp 640w, /images/home-reserve-hero-800w.webp 800w, /images/home-reserve-hero.webp 1536w"
+          sizes="(max-width: 600px) 100vw, 42vw"
+          type="image/webp"
+        />
         <img
           src="/images/home-reserve-hero-fallback.jpg"
           alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
@@ -112,7 +116,11 @@ const { page } = Astro.props;
         />
       </picture>
       <picture class="g-img-top-landscape">
-        <source srcset="/images/home-reserve-garage.webp" type="image/webp" />
+        <source
+          srcset="/images/home-reserve-garage-400w.webp 400w, /images/home-reserve-garage-640w.webp 640w, /images/home-reserve-garage-800w.webp 800w, /images/home-reserve-garage.webp 2048w"
+          sizes="(max-width: 600px) 100vw, 56vw"
+          type="image/webp"
+        />
         <img
           src="/images/home-reserve-garage-fallback.jpg"
           alt="Home Reserve battery backup system installed in a garage"
@@ -129,7 +137,11 @@ const { page } = Astro.props;
     </p>
     <div class="g-img-bottom-row">
       <picture>
-        <source srcset="/images/home-reserve-backyard.webp" type="image/webp" />
+        <source
+          srcset="/images/home-reserve-backyard-400w.webp 400w, /images/home-reserve-backyard-640w.webp 640w, /images/home-reserve-backyard-800w.webp 800w, /images/home-reserve-backyard.webp 1536w"
+          sizes="(max-width: 600px) 50vw, 33vw"
+          type="image/webp"
+        />
         <img
           src="/images/home-reserve-backyard-fallback.jpg"
           alt="Home Reserve system in a small backyard installation"
@@ -140,7 +152,11 @@ const { page } = Astro.props;
         />
       </picture>
       <picture>
-        <source srcset="/images/home-reserve-night.webp" type="image/webp" />
+        <source
+          srcset="/images/home-reserve-night-400w.webp 400w, /images/home-reserve-night-640w.webp 640w, /images/home-reserve-night-800w.webp 800w, /images/home-reserve-night.webp 1536w"
+          sizes="(max-width: 600px) 50vw, 33vw"
+          type="image/webp"
+        />
         <img
           src="/images/home-reserve-night-fallback.jpg"
           alt="Home Reserve backup power system operating at night during an outage"
@@ -151,7 +167,11 @@ const { page } = Astro.props;
         />
       </picture>
       <picture>
-        <source srcset="/images/home-reserve-outdoor.webp" type="image/webp" />
+        <source
+          srcset="/images/home-reserve-outdoor-400w.webp 400w, /images/home-reserve-outdoor-640w.webp 640w, /images/home-reserve-outdoor-800w.webp 800w, /images/home-reserve-outdoor.webp 1536w"
+          sizes="(max-width: 600px) 50vw, 33vw"
+          type="image/webp"
+        />
         <img
           src="/images/home-reserve-outdoor-fallback.jpg"
           alt="Home Reserve unit close-up showing installation quality"
