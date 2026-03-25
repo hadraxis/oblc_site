@@ -26,7 +26,7 @@ const breadcrumbSchema = {
       <a href="/generator/how-it-works" class="g-nav-link">How it works</a>
       <a href="/generator/about" class="g-nav-link">About</a>
     </div>
-    <a href="/generator/houston#estimate" class="g-nav-cta">Get a free estimate</a>
+    <a href="/generator/houston#estimate" class="g-nav-cta">See the math for your home</a>
   </nav>
 
   <!-- HERO -->
@@ -262,11 +262,90 @@ const breadcrumbSchema = {
     </div>
   </div>
 
+  <!-- HOA RESTRICTIONS -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 72px 48px 0;">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">HOA and property restrictions</p>
+    <p style="font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif; font-size: clamp(32px, 4vw, 52px); line-height: 1; letter-spacing: 1px; color: var(--g-black); margin: 20px 0 32px;">
+      Your HOA may not allow a generator.
+    </p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="permits-grid-2">
+      <div>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          Under <strong style="color: var(--g-black); font-weight: 500;">Texas Property Code Section 202.019</strong>,
+          HOAs may regulate the installation of standby generators. Many Houston-area HOAs require prior written
+          approval from the Architectural Control Committee (ACC) before installation can begin.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate); margin-bottom: 20px;">
+          In practice, this means generator installations in master-planned communities across
+          Katy, Sugar Land, The Woodlands, and Pearland face additional requirements that most
+          homeowners don't discover until they're deep into the quote process.
+        </p>
+        <p style="font-size: 15px; line-height: 1.8; color: var(--g-slate);">
+          A wall-mounted battery system like Home Reserve sidesteps all of these requirements.
+          No outdoor unit. No noise. No exhaust. No ACC approval needed in most cases.
+        </p>
+      </div>
+
+      <div>
+        <p style="font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--g-muted); margin-bottom: 20px;">
+          Common HOA generator restrictions
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          {[
+            {
+              gen: "Written ACC approval required before purchase",
+              battery: "No approval needed — wall-mounted, no exterior change"
+            },
+            {
+              gen: "Sound barrier may be required (cedar fence + rubber dampener, at homeowner cost)",
+              battery: "Silent operation — nothing to hear"
+            },
+            {
+              gen: "Rear yard only, no more than 6 inches above grade",
+              battery: "Mounts to interior wall or garage"
+            },
+            {
+              gen: "Cannot be visible from any street",
+              battery: "Installed indoors — nothing to see"
+            },
+            {
+              gen: "Testing hours restricted (weekday 9am–5pm only)",
+              battery: "No testing cycle — no noise, no schedule"
+            }
+          ].map((item) => (
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-bottom: 2px;">
+              <div style="background: var(--g-off-white); padding: 16px 18px; border-left: 3px solid #c0392b;">
+                <p style="font-size: 13px; line-height: 1.5; color: var(--g-slate);">{item.gen}</p>
+              </div>
+              <div style="background: var(--g-black); padding: 16px 18px; border-left: 3px solid var(--g-amber);">
+                <p style="font-size: 13px; line-height: 1.5; color: var(--g-off-white);">{item.battery}</p>
+              </div>
+            </div>
+          ))}
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px;">
+            <div style="padding: 8px 18px;">
+              <p style="font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--g-muted); font-weight: 500;">Generator</p>
+            </div>
+            <div style="padding: 8px 18px;">
+              <p style="font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--g-muted); font-weight: 500;">Battery</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 11px; color: var(--g-muted); margin-top: 16px; line-height: 1.6;">
+          Based on actual Houston-area HOA deed restriction language and Texas Property Code §202.019.
+          Requirements vary by community. Verify with your specific HOA before purchasing any backup power system.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA -->
   <div style="padding: 80px 48px; max-width: 1200px; margin: 0 auto; text-align: center;">
     <p class="g-eyebrow" style="justify-content: center;">Ready to get started</p>
     <p style="font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 5vw, 64px); line-height: 1; letter-spacing: 1px; margin: 20px auto 32px; color: var(--g-black);">
-      Get a free estimate for your home.
+      See the math for your home.
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
       {[

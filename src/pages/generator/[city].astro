@@ -22,7 +22,7 @@ const { page } = Astro.props;
       <a href="/generator/permits" class="g-nav-link">Permits</a>
       <a href="/generator/about" class="g-nav-link">About</a>
     </div>
-    <a href="#estimate" class="g-nav-cta">Get a free estimate</a>
+    <a href="#estimate" class="g-nav-cta">See the math for your home</a>
   </nav>
 
   <!-- HERO -->
@@ -54,7 +54,7 @@ const { page } = Astro.props;
 
     <div class="g-hero-right" id="estimate">
       <div id="chat-wrap">
-        <p class="g-form-label">Free estimate</p>
+        <p class="g-form-label">Your home, your math</p>
         <p class="g-form-title">{page.formTitle}</p>
 
         <!-- Chat thread -->
@@ -99,56 +99,177 @@ const { page } = Astro.props;
 
   <!-- INSTALLATION IMAGES -->
   <div class="g-img-section">
-    <img
-      src="/images/home-reserve-hero.jpg"
-      alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
-      width="1200"
-      height="525"
-      loading="lazy"
-      decoding="async"
-      style="width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16/7;"
-    />
+    <picture>
+      <source srcset="/images/home-reserve-hero.webp" type="image/webp" />
+      <img
+        src="/images/home-reserve-hero-fallback.jpg"
+        alt={`Home Reserve whole-home backup power system installed in a ${page.city}, TX home`}
+        width="1200"
+        height="1600"
+        loading="lazy"
+        decoding="async"
+        style="width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 16/7;"
+      />
+    </picture>
     <p class="g-img-caption">
       Home Reserve mounts to your wall indoors. No concrete pad, no outdoor unit, no exhaust.
       Wall-mounted, silent, and HOA-friendly.
     </p>
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px;">
-      <img
-        src="/images/home-reserve-garage.jpg"
-        alt="Home Reserve battery backup system installed in a garage"
-        width="400"
-        height="400"
-        loading="lazy"
-        decoding="async"
-        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
-      />
-      <img
-        src="/images/home-reserve-backyard.jpg"
-        alt="Home Reserve system in a small backyard installation"
-        width="400"
-        height="400"
-        loading="lazy"
-        decoding="async"
-        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
-      />
-      <img
-        src="/images/home-reserve-night.jpg"
-        alt="Home Reserve backup power system operating at night during an outage"
-        width="400"
-        height="400"
-        loading="lazy"
-        decoding="async"
-        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
-      />
-      <img
-        src="/images/home-reserve-outdoor.jpg"
-        alt="Home Reserve unit close-up showing installation quality"
-        width="400"
-        height="400"
-        loading="lazy"
-        decoding="async"
-        style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
-      />
+      <picture>
+        <source srcset="/images/home-reserve-garage.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-garage-fallback.jpg"
+          alt="Home Reserve battery backup system installed in a garage"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+        />
+      </picture>
+      <picture>
+        <source srcset="/images/home-reserve-backyard.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-backyard-fallback.jpg"
+          alt="Home Reserve system in a small backyard installation"
+          width="800"
+          height="1067"
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+        />
+      </picture>
+      <picture>
+        <source srcset="/images/home-reserve-night.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-night-fallback.jpg"
+          alt="Home Reserve backup power system operating at night during an outage"
+          width="800"
+          height="1067"
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+        />
+      </picture>
+      <picture>
+        <source srcset="/images/home-reserve-outdoor.webp" type="image/webp" />
+        <img
+          src="/images/home-reserve-outdoor-fallback.jpg"
+          alt="Home Reserve unit close-up showing installation quality"
+          width="800"
+          height="1067"
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block;"
+        />
+      </picture>
+    </div>
+  </div>
+
+  <!-- STORM LOAD TABLE -->
+  <div class="g-load-section">
+    <div class="g-load-inner">
+      <div class="g-section-rule"></div>
+      <p class="g-section-label">Storm normal · what actually runs</p>
+      <h2 class="g-load-title">What a {page.city} Family <em>Actually Needs</em> During an Outage</h2>
+      <p class="g-load-intro">No central AC — windows open, box fan in. Not survival mode. Just storm life. Everyone in Houston already knows how to do this.</p>
+      <div class="g-load-grid">
+        <div class="g-load-item"><div class="g-load-appliance">Refrigerator</div><div class="g-load-watts">150 <span>W avg</span></div><div class="g-load-note">Cycling on/off. Smart panel manages surge.</div></div>
+        <div class="g-load-item"><div class="g-load-appliance">Box Fan × 2</div><div class="g-load-watts">100 <span>W</span></div><div class="g-load-note">Open windows. Cooler air from the storm itself.</div></div>
+        <div class="g-load-item"><div class="g-load-appliance">Wi-Fi + Router</div><div class="g-load-watts">50 <span>W</span></div><div class="g-load-note">Restoration updates. Communication.</div></div>
+        <div class="g-load-item"><div class="g-load-appliance">Phones + Laptops</div><div class="g-load-watts">100 <span>W</span></div><div class="g-load-note">Multiple devices charging continuously.</div></div>
+        <div class="g-load-item"><div class="g-load-appliance">LED Lights</div><div class="g-load-watts">60 <span>W</span></div><div class="g-load-note">Common areas. Kitchen. Kids' room.</div></div>
+        <div class="g-load-item"><div class="g-load-appliance">Bluetooth Speaker</div><div class="g-load-watts">15 <span>W</span></div><div class="g-load-note">Because morale is a real thing.</div></div>
+        <div class="g-load-total"><div class="g-load-appliance">Total Storm Draw</div><div class="g-load-watts">~475 <span>W sustained</span></div><div class="g-load-note">The smart panel sheds AC compressor startup and heavy motor surges automatically. This is the spike-free baseline.</div></div>
+      </div>
+      <div class="g-duration-callout">
+        <div class="g-duration-item g-duration-featured">
+          <div class="g-duration-season">Summer Storm · Windows Open</div>
+          <div class="g-duration-hours">54<span>hrs</span></div>
+          <div class="g-duration-desc">27 kWh at 500W sustained. Zero recharging. Absolute worst case. The real experience is you never get close.</div>
+        </div>
+        <div class="g-duration-item">
+          <div class="g-duration-season">Winter Storm · Gas Heat Running</div>
+          <div class="g-duration-hours">26<span>hrs</span></div>
+          <div class="g-duration-desc">Add the air handler fan (~600W). Battery powers the fan. Gas does the heating. Same coverage, different season.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARISON TABLE -->
+  <div class="g-compare-section">
+    <div class="g-section-rule"></div>
+    <p class="g-section-label">Side by side</p>
+    <h2 class="g-compare-title">The Honest <em>Comparison</em></h2>
+    <div class="g-compare-grid">
+      <div class="g-compare-col">
+        <div class="g-compare-col-label">Whole Home Standby Generator</div>
+        <div class="g-compare-row"><span class="g-compare-attr">Installed cost</span><span class="g-compare-val g-val-bad">$8,500–$13,000</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Fuel cost (half load, 7 days)</span><span class="g-compare-val g-val-bad">$700+ in propane</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Annual maintenance</span><span class="g-compare-val g-val-bad">Required</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Noise level</span><span class="g-compare-val g-val-bad">65–70 dB operating</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">HOA approval</span><span class="g-compare-val g-val-bad">Often required</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Winter freeze risk</span><span class="g-compare-val g-val-bad">Gas line failure = no power</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Recharge method</span><span class="g-compare-val g-val-bad">Fuel delivery / tank</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Warranty</span><span class="g-compare-val">5 years limited</span></div>
+      </div>
+      <div class="g-compare-col g-compare-eos">
+        <div class="g-compare-col-label">Home Reserve 27 kWh Battery</div>
+        <div class="g-compare-row"><span class="g-compare-attr">Equipment cost</span><span class="g-compare-val g-val-good">$14,610 + install</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Fuel cost per outage</span><span class="g-compare-val g-val-good">None</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Annual maintenance</span><span class="g-compare-val g-val-good">None</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Noise level</span><span class="g-compare-val g-val-good">Silent</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">HOA approval</span><span class="g-compare-val g-val-good">Wall-mounted, no issue</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Winter freeze</span><span class="g-compare-val g-val-good">Gas heat + battery fan</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Recharge method</span><span class="g-compare-val g-val-good">Automatic from grid</span></div>
+        <div class="g-compare-row"><span class="g-compare-attr">Warranty</span><span class="g-compare-val g-val-good">10 years</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAP TIMELINE -->
+  <div class="g-gap-section">
+    <div class="g-gap-inner">
+      <div>
+        <h2 class="g-gap-title">The Gap Is Just <em>Houston.</em></h2>
+        <div class="g-gap-body">
+          <p>Maybe the grid doesn't come back until Friday. Maybe you run low Wednesday night and you're without power until Saturday morning.</p>
+          <p>That gap — <strong>Wednesday to Saturday — is just Houston.</strong> Everyone who grew up here lived through that gap with nothing. No battery. No generator. Just dealing.</p>
+          <p>The difference is you got to Wednesday in comfort instead of suffering from Sunday night.</p>
+        </div>
+      </div>
+      <div class="g-gap-timeline">
+        <div class="g-timeline-item">
+          <div class="g-timeline-day">Sun</div>
+          <div class="g-timeline-content">
+            <div class="g-timeline-status">Storm hits</div>
+            <div class="g-timeline-desc">Grid goes down. Battery kicks in instantly. Fridge running, Wi-Fi up, phones charging.</div>
+          </div>
+        </div>
+        <div class="g-timeline-item">
+          <div class="g-timeline-day">Mon</div>
+          <div class="g-timeline-content">
+            <div class="g-timeline-status">Still out · Battery comfortable</div>
+            <div class="g-timeline-desc">Storm normal in effect. Porch life. Grilling what's in the freezer. Neighborhood has a different energy.</div>
+          </div>
+        </div>
+        <div class="g-timeline-item">
+          <div class="g-timeline-day">Tue</div>
+          <div class="g-timeline-content">
+            <div class="g-timeline-status">Day two · Still running</div>
+            <div class="g-timeline-desc">54-hour floor means you're still comfortable. Time to assess calmly. No scramble. No 2am decisions.</div>
+          </div>
+        </div>
+        <div class="g-timeline-item">
+          <div class="g-timeline-day g-timeline-faded">Wed+</div>
+          <div class="g-timeline-content">
+            <div class="g-timeline-status">The gap arrives</div>
+            <div class="g-timeline-desc">This is Houston doing what Houston does. You've lived through this your whole life. The difference is you had two days of dignity first.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -184,16 +305,19 @@ const { page } = Astro.props;
         If you're within reasonable distance, reach out — coverage varies by installer availability.
       </p>
     </div>
-    <iframe
-      class="g-map-frame"
-      src={page.mapEmbed}
-      width="100%"
-      height="420"
-      title={`Service area map — ${page.city}, TX`}
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen
-    ></iframe>
+    <div
+      class="g-map-placeholder"
+      data-map-src={page.mapEmbed}
+      data-map-title={`Service area map — ${page.city}, TX`}
+      role="button"
+      tabindex="0"
+      aria-label={`Load interactive map of ${page.city}, TX service area`}
+    >
+      <div class="g-map-placeholder-content">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span>View service area map</span>
+      </div>
+    </div>
   </div>
 
   <!-- FOOTER -->

@@ -297,6 +297,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           document.getElementById('estimate')?.scrollIntoView({ behavior: 'smooth' });
         });
       });
+
+      // Click-to-load map
+      document.querySelectorAll('.g-map-placeholder').forEach((el) => {
+        function loadMap() {
+          const src = (el as HTMLElement).dataset.mapSrc;
+          const title = (el as HTMLElement).dataset.mapTitle || 'Service area map';
+          const iframe = document.createElement('iframe');
+          iframe.className = 'g-map-frame';
+          iframe.src = src || '';
+          iframe.width = '100%';
+          iframe.height = '420';
+          iframe.title = title;
+          iframe.loading = 'lazy';
+          iframe.referrerPolicy = 'no-referrer-when-downgrade';
+          iframe.allowFullscreen = true;
+          el.replaceWith(iframe);
+        }
+        el.addEventListener('click', loadMap);
+        el.addEventListener('keydown', (e: Event) => { if ((e as KeyboardEvent).key === 'Enter') loadMap(); });
+      });
     </script>
   </body>
 </html>

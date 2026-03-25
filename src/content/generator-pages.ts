@@ -25,7 +25,7 @@ export const generatorPages: GeneratorPage[] = [
     county: "Harris County",
     metaTitle: "Standby Generator Installation Houston TX | Free Home Estimate",
     metaDescription:
-      "Houston loses power 20+ times a year — mostly on regular Tuesdays, not just hurricanes. Find out if a standby generator is right for your home. Free estimate.",
+      "Houston loses power 20+ times a year — mostly on regular Tuesdays, not just hurricanes. Find out if a standby generator is right for your home. See the math.",
     eyebrow: "Houston, TX — Harris County",
     headlineLines: ["You Don't Need", "A Generator.", "You Need Days."],
     subhead:
@@ -54,7 +54,7 @@ export const generatorPages: GeneratorPage[] = [
       },
     ],
     pullQuote: "It's not the hurricane. It's every Tuesday.",
-    formTitle: "Get a free estimate",
+    formTitle: "See the math for your home",
     formNote: "Serving Houston and Harris County. No obligation.",
     mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-95.57%2C29.62%2C-95.15%2C29.90&layer=mapnik&marker=29.7604%2C-95.3698",
   },
@@ -81,8 +81,8 @@ export const generatorPages: GeneratorPage[] = [
     ],
     reasons: [
       {
-        title: "HOA-friendly",
-        body: "Natural gas units run quietly and can be installed within HOA setback requirements.",
+        title: "No HOA approval needed",
+        body: "Many Katy HOAs require ACC approval, sound barriers, and rear-yard placement for generators. A wall-mounted battery has nothing to object to.",
       },
       {
         title: "No manual startup",
@@ -90,11 +90,11 @@ export const generatorPages: GeneratorPage[] = [
       },
       {
         title: "Built for heat season",
-        body: "Keeps your AC running through summer outages when heat becomes a health risk.",
+        body: "Keeps essentials running through summer outages — fridge, fans, Wi-Fi, phones — without the fuel cost or noise.",
       },
     ],
     pullQuote: "New house. Old grid. Not your problem anymore.",
-    formTitle: "Get a free estimate in Katy",
+    formTitle: "See the math for your Katy home",
     formNote: "Serving Katy and surrounding Fort Bend / Harris County areas. No obligation.",
     mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-95.95%2C29.72%2C-95.70%2C29.84&layer=mapnik&marker=29.7858%2C-95.8245",
   },
@@ -105,7 +105,7 @@ export const generatorPages: GeneratorPage[] = [
     county: "Fort Bend County",
     metaTitle: "Standby Generator Installation Sugar Land TX | Free Home Estimate",
     metaDescription:
-      "Sugar Land homeowners invest in their homes. A standby generator protects that investment through every outage, storm season and off-season. Free estimate.",
+      "Sugar Land homeowners invest in their homes. A standby generator protects that investment through every outage, storm season and off-season. See the math.",
     eyebrow: "Sugar Land, TX — Fort Bend County",
     headlineLines: ["Your Home", "Deserves", "Backup Power."],
     subhead:
@@ -121,8 +121,8 @@ export const generatorPages: GeneratorPage[] = [
     ],
     reasons: [
       {
-        title: "Protects appliances",
-        body: "Clean, stable power prevents surges from damaging HVAC systems, refrigerators, and electronics.",
+        title: "HOA-friendly by default",
+        body: "First Colony, Riverstone, and Telfair all have deed restrictions. Wall-mounted battery requires no ACC approval, no sound barrier, no outdoor unit.",
       },
       {
         title: "Medical-grade reliability",
@@ -130,11 +130,11 @@ export const generatorPages: GeneratorPage[] = [
       },
       {
         title: "Increases home value",
-        body: "A permitted, professionally installed generator is a documented home improvement that transfers with the property.",
+        body: "A permitted, professionally installed backup power system is a documented home improvement that transfers with the property.",
       },
     ],
-    pullQuote: "The grid doesn't care about your schedule. Your generator does.",
-    formTitle: "Get a free estimate in Sugar Land",
+    pullQuote: "The grid doesn't care about your schedule. Your backup power does.",
+    formTitle: "See the math for your Sugar Land home",
     formNote: "Serving Sugar Land and Fort Bend County. No obligation.",
     mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-95.73%2C29.56%2C-95.50%2C29.68&layer=mapnik&marker=29.6197%2C-95.6349",
   },
@@ -174,7 +174,7 @@ export const generatorPages: GeneratorPage[] = [
       },
     ],
     pullQuote: "The city is growing. The grid is not. Plan accordingly.",
-    formTitle: "Get a free estimate in Pearland",
+    formTitle: "See the math for your Pearland home",
     formNote: "Serving Pearland and Brazoria County. No obligation.",
     mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-95.40%2C29.52%2C-95.19%2C29.64&layer=mapnik&marker=29.5636%2C-95.2860",
   },
@@ -185,7 +185,7 @@ export const generatorPages: GeneratorPage[] = [
     county: "Montgomery County",
     metaTitle: "Standby Generator Installation The Woodlands TX | Free Home Estimate",
     metaDescription:
-      "The Woodlands homeowners expect reliability. A standby generator delivers it, every time the grid can't. Free estimate for Montgomery County homes.",
+      "The Woodlands homeowners expect reliability. A standby generator delivers it, every time the grid can't. See the math for Montgomery County homes.",
     eyebrow: "The Woodlands, TX — Montgomery County",
     headlineLines: ["The Grid", "Has Off Days.", "You Shouldn't."],
     subhead:
@@ -202,19 +202,19 @@ export const generatorPages: GeneratorPage[] = [
     reasons: [
       {
         title: "Tree canopy = outage risk",
-        body: "The Woodlands' signature tree coverage is also its main grid liability. Standby power neutralizes that entirely.",
+        body: "The Woodlands' signature tree coverage is also its main grid liability. Backup power neutralizes that entirely.",
       },
       {
-        title: "Self-exercising system",
-        body: "Modern generators run a weekly self-test to stay ready. You'll know it's working before you ever need it.",
+        title: "No HOA fight",
+        body: "Woodlands covenant restrictions require ACC approval for outdoor generators. Battery mounts inside — no approval, no sound barrier, no visibility issue.",
       },
       {
         title: "Protect home office and remote work",
-        body: "Working from home means an outage is lost income. A generator keeps you on the clock regardless.",
+        body: "Working from home means an outage is lost income. Backup power keeps you on the clock regardless.",
       },
     ],
     pullQuote: "Beautiful neighborhood. Unreliable grid. Easy fix.",
-    formTitle: "Get a free estimate in The Woodlands",
+    formTitle: "See the math for your Woodlands home",
     formNote: "Serving The Woodlands and Montgomery County. No obligation.",
     mapEmbed: "https://www.openstreetmap.org/export/embed.html?bbox=-95.61%2C30.09%2C-95.37%2C30.22&layer=mapnik&marker=30.1488%2C-95.4613",
   },
